@@ -1,0 +1,7 @@
+
+
+-com_finder
+-com_search
+
+
+You can make your contribution for all guest user for everybody is website, compatible this section only Bootstrap 3 
