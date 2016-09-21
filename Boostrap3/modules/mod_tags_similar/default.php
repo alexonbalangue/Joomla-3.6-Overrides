@@ -11,11 +11,9 @@ defined('_JEXEC') or die;
 
 ?>
 <?php JLoader::register('TagsHelperRoute', JPATH_BASE . '/components/com_tags/helpers/route.php'); ?>
-<div class="tagssimilar<?php echo $moduleclass_sfx; ?>">
+<div class="<?php echo $moduleclass_sfx; ?>">
 <?php if ($list) : ?>
-	<ul>
 	<?php foreach ($list as $i => $item) : ?>
-		<li>
 			<?php if (($item->type_alias == 'com_users.category') || ($item->type_alias == 'com_banners.category')) : ?>
 				<?php if (!empty($item->core_title)) :
 					echo htmlspecialchars($item->core_title, ENT_COMPAT, 'UTF-8');
@@ -26,11 +24,10 @@ defined('_JEXEC') or die;
 					<?php if (!empty($item->core_title)) :
 						echo htmlspecialchars($item->core_title, ENT_COMPAT, 'UTF-8');
 					endif; ?>
-				</a>
+				</a> 
 			<?php endif; ?>
-		</li>
+		 &nbsp;-&nbsp; 
 	<?php endforeach; ?>
-	</ul>
 <?php else : ?>
 	<span><?php echo JText::_('MOD_TAGS_SIMILAR_NO_MATCHING_TAGS'); ?></span>
 <?php endif; ?>

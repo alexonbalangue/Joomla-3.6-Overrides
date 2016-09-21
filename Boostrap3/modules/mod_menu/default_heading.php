@@ -20,9 +20,9 @@ if ($item->menu_image)
 
 	if ($item->params->get('menu_text', 1))
 	{
-		$linktype .= '<span class="image-title">' . $item->title . '</span>';
+		$linktype .=  $item->title;
 	}
 }
 
 ?>
-<span class="nav-header <?php echo $anchor_css; ?>"<?php echo $title; ?>><?php echo $linktype; ?></span>
+<span class="<?php echo $anchor_css; ?>"<?php echo $title; ?>><?php echo $linktype; ?></span>

@@ -12,13 +12,12 @@ defined('_JEXEC') or die;
 require_once JPATH_ROOT . '/components/com_banners/helpers/banner.php';
 $baseurl = JUri::base();
 ?>
-<div class="bannergroup<?php echo $moduleclass_sfx ?>">
+<div class="<?php echo $moduleclass_sfx ?>">
 <?php if ($headerText) : ?>
 	<?php echo $headerText; ?>
 <?php endif; ?>
 
 <?php foreach ($list as $item) : ?>
-	<div class="banneritem">
 		<?php $link = JRoute::_('index.php?option=com_banners&task=click&id=' . $item->id);?>
 		<?php if ($item->type == 1) :?>
 			<?php // Text based banners ?>
@@ -102,8 +101,8 @@ $baseurl = JUri::base();
 				</object>
 			<?php endif;?>
 		<?php endif;?>
-		<div class="clr"></div>
-	</div>
+		<div class="clearfix"></div>
+
 <?php endforeach; ?>
 
 <?php if ($footerText) : ?>

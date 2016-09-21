@@ -18,14 +18,14 @@ if (($tagId = $params->get('tag_id', '')))
 
 // The menu class is deprecated. Use nav instead
 ?>
-<ul class="nav menu<?php echo $class_sfx; ?>"<?php echo $id; ?>>
+<ul class="nav navbar-nav<?php echo $class_sfx; ?>"<?php echo $id; ?>>
 <?php foreach ($list as $i => &$item)
 {
 	$class = 'item-' . $item->id;
 
 	if ($item->id == $default_id)
 	{
-		$class .= ' default';
+		$class .= '';
 	}
 
 
@@ -48,7 +48,7 @@ if (($tagId = $params->get('tag_id', '')))
 		}
 		elseif (in_array($aliasToId, $path))
 		{
-			$class .= ' alias-parent-active';
+			$class .= ' dropdown';
 		}
 	}
 
@@ -85,7 +85,7 @@ if (($tagId = $params->get('tag_id', '')))
 	// The next item is deeper.
 	if ($item->deeper)
 	{
-		echo '<ul class="nav-child unstyled small">';
+		echo '<ul class="dropdown-menu">';
 	}
 	// The next item is shallower.
 	elseif ($item->shallower)

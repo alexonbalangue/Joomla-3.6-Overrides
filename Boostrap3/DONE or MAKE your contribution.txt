@@ -4,4 +4,30 @@
 -com_search
 
 
+
+-mod_login
+-mod_search
+-mod_custom
+-mod_wrapper
+-mod_whosonline
+-mod_breadcrumbs
+-mod_banners
+-mod_articles_popular
+-mod_articles_news
+-mod_articles_latest
+[PENDING default.php]-mod_articles_category
+[PENDING default-items.php]-mod_articles_categories
+-mod_articles_archive
+-mod_users_latest
+-mod_tags_similar
+-mod_tags_popular
+-mod_syndicate
+-mod_stats
+-mod_related_items
+-mod_random_image
+-mod_random_image (no ramdom anymore)
+-mod_footer
+
+
+
 You can make your contribution for all guest user for everybody is website, compatible this section only Bootstrap 3 
