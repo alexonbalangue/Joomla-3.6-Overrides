@@ -34,7 +34,7 @@ defined('_JEXEC') or die;
 
 <?php // Display the 'no results' message and exit the template. ?>
 <?php if ($this->total == 0) : ?>
-	<div id="search-result-empty">
+	<div id="alert alert-danger">
 		<h2><?php echo JText::_('COM_FINDER_SEARCH_NO_RESULTS_HEADING'); ?></h2>
 		<?php $multilang = JFactory::getApplication()->getLanguageFilter() ? '_MULTILANG' : ''; ?>
 		<p><?php echo JText::sprintf('COM_FINDER_SEARCH_NO_RESULTS_BODY' . $multilang, $this->escape($this->query->input)); ?></p>

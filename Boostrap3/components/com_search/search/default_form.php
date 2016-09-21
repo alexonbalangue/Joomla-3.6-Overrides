@@ -14,22 +14,25 @@ JHtml::_('bootstrap.tooltip');
 $lang = JFactory::getLanguage();
 $upper_limit = $lang->getUpperLimitSearchWord();
 ?>
-<form id="searchForm" action="<?php echo JRoute::_('index.php?option=com_search');?>" method="post">
+<form id="searchForm" class="form-inline text-center" action="<?php echo JRoute::_('index.php?option=com_search');?>" method="post">
 
-	<div class="btn-toolbar">
-		<div class="btn-group pull-left">
-			<input type="text" name="searchword" placeholder="<?php echo JText::_('COM_SEARCH_SEARCH_KEYWORD'); ?>" id="search-searchword" size="30" maxlength="<?php echo $upper_limit; ?>" value="<?php echo $this->escape($this->origkeyword); ?>" class="inputbox" />
-		</div>
-		<div class="btn-group pull-left">
-			<button name="Search" onclick="this.form.submit()" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('COM_SEARCH_SEARCH');?>"><span class="icon-search"></span><?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?></button>
-		</div>
+	<div class="input-group input-group-lg">
+		<label for="searchword" class="sr-only">
+			<?php echo JText::_('COM_FINDER_SEARCH_TERMS'); ?>
+		</label>
+		<span class="input-group-addon" id="form-searching"><i class="fa fa-search"></i></span>
+		<input type="text" name="searchword" placeholder="<?php echo JText::_('COM_SEARCH_SEARCH_KEYWORD'); ?>" id="search-searchword" size="30" maxlength="<?php echo $upper_limit; ?>" value="<?php echo $this->escape($this->origkeyword); ?>" class="form-control" aria-describedby="form-searching">
+		<div class="input-group-btn">
+			<button name="Search" onclick="this.form.submit()" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('COM_SEARCH_SEARCH');?>">
+			<?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?></button>
+		</div>		
 		<input type="hidden" name="task" value="search" />
 		<div class="clearfix"></div>
 	</div>
 
-	<div class="searchintro<?php echo $this->params->get('pageclass_sfx'); ?>">
+	<div class="<?php echo $this->params->get('pageclass_sfx'); ?>">
 		<?php if (!empty($this->searchword)):?>
-		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', '<span class="badge badge-info">' . $this->total . '</span>');?></p>
+		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', '<i class="badge badge-info">' . $this->total . '</i>');?></p>
 		<?php endif;?>
 	</div>
 

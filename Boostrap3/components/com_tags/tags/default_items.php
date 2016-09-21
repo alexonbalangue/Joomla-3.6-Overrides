@@ -48,24 +48,23 @@ JFactory::getDocument()->addScriptDeclaration("
 
 <form action="<?php echo htmlspecialchars(JUri::getInstance()->toString()); ?>" method="post" name="adminForm" id="adminForm">
 	<?php if ($this->params->get('filter_field') || $this->params->get('show_pagination_limit')) : ?>
-		<fieldset class="filters btn-toolbar">
 			<?php if ($this->params->get('filter_field')) : ?>
 				<div class="btn-group">
-					<label class="filter-search-lbl element-invisible" for="filter-search">
+					<label class="sr-only" for="filter-search">
 						<?php echo JText::_('COM_TAGS_TITLE_FILTER_LABEL') . '&#160;'; ?>
 					</label>
 					<input type="text" name="filter-search" id="filter-search" value="<?php echo $this->escape($this->state->get('list.filter')); ?>" class="inputbox" onchange="document.adminForm.submit();" title="<?php echo JText::_('COM_TAGS_FILTER_SEARCH_DESC'); ?>" placeholder="<?php echo JText::_('COM_TAGS_TITLE_FILTER_LABEL'); ?>" />
-					<button type="button" name="filter-search-button" title="<?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?>" onclick="document.adminForm.submit();" class="btn">
-						<span class="icon-search"></span>
+					<button type="button" name="filter-search-button" title="<?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?>" onclick="document.adminForm.submit();" class="btn btn-info">
+						<i class="fa fa-search"></i>
 					</button>
-					<button type="reset" name="filter-clear-button" title="<?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?>" class="btn" onclick="resetFilter(); document.adminForm.submit();">
-						<span class="icon-remove"></span>
+					<button type="reset" name="filter-clear-button" title="<?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?>" class="btn btn-danger" onclick="resetFilter(); document.adminForm.submit();">
+						<i class="fa fa-trash-o"></i>
 					</button>
 				</div>
 			<?php endif; ?>
 			<?php if ($this->params->get('show_pagination_limit')) : ?>
 				<div class="btn-group pull-right">
-					<label for="limit" class="element-invisible">
+					<label for="limit" class="sr-only">
 						<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>
 					</label>
 					<?php echo $this->pagination->getLimitBox(); ?>
@@ -77,7 +76,6 @@ JFactory::getDocument()->addScriptDeclaration("
 			<input type="hidden" name="limitstart" value="" />
 			<input type="hidden" name="task" value="" />
 			<div class="clearfix"></div>
-		</fieldset>
 	<?php endif; ?>
 
 	<?php if ($this->items == false || $n == 0) : ?>
