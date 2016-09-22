@@ -53,7 +53,7 @@ extract($displayData);
 JHtml::_('behavior.modal');
 
 // Include jQuery
-JHtml::_('jquery.framework');
+//JHtml::_('jquery.framework');
 JHtml::_('script', 'media/mediafield-mootools.min.js', true, true, false, false, true);
 
 // Tooltip for INPUT showing whole image path
@@ -147,7 +147,7 @@ if ($showPreview)
 		$tooltip = $previewImgEmpty . $previewImg;
 		$options = array(
 			'title' => JText::_('JLIB_FORM_MEDIA_PREVIEW_SELECTED_IMAGE'),
-					'text' => '<i class="icon-eye"></i>',
+					'text' => '<i class="fa fa-eye"></i>',
 					'class' => 'hasTipPreview'
 					);
 
@@ -168,14 +168,14 @@ echo '	<input type="text" name="' . $name . '" id="' . $id . '" value="'
 	. JUri::root() . '"/>';
 
 ?>
-<a class="modal btn" title="<?php echo JText::_('JLIB_FORM_BUTTON_SELECT'); ?>" href="
+<a class="modal btn btn-default" title="<?php echo JText::_('JLIB_FORM_BUTTON_SELECT'); ?>" href="
 <?php echo ($readonly ? ''
 		: ($link ? $link
 		: 'index.php?option=com_media&amp;view=images&amp;tmpl=component&amp;asset=' . $asset . '&amp;author='
 	. $authorField) . '&amp;fieldid=' . $id . '&amp;folder=' . $folder) . '"'
 	. ' rel="{handler: \'iframe\', size: {x: 800, y: 500}}"'; ?>>
- <?php echo JText::_('JLIB_FORM_BUTTON_SELECT'); ?></a><a class="btn hasTooltip" title="<?php echo JText::_('JLIB_FORM_BUTTON_CLEAR'); ?>" href="#" onclick="jInsertFieldValue('', '<?php echo $id; ?>'); return false;">
-	<i class="icon-remove"></i></a>
+ <?php echo JText::_('JLIB_FORM_BUTTON_SELECT'); ?></a><a class="btn btn-danger hasTooltip" title="<?php echo JText::_('JLIB_FORM_BUTTON_CLEAR'); ?>" href="#" onclick="jInsertFieldValue('', '<?php echo $id; ?>'); return false;">
+	<i class="fa fa-ban"></i></a>
 
 
 </div>

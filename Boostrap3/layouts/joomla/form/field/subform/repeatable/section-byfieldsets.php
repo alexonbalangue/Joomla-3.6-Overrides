@@ -24,22 +24,24 @@ extract($displayData);
 	<?php if (!empty($buttons)):?>
 	<div class="btn-toolbar text-right">
 		<div class="btn-group">
-			<?php if (!empty($buttons['add'])):?><a class="group-add btn btn-mini button btn-success"><span class="icon-plus"></span> </a><?php endif;?>
-			<?php if (!empty($buttons['remove'])):?><a class="group-remove btn btn-mini button btn-danger"><span class="icon-minus"></span> </a><?php endif;?>
-			<?php if (!empty($buttons['move'])):?><a class="group-move btn btn-mini button btn-primary"><span class="icon-move"></span> </a><?php endif;?>
+			<?php if (!empty($buttons['add'])):?><a class="btn btn-success"><i class="fa fa-plus"></i> </a><?php endif;?>
+			<?php if (!empty($buttons['remove'])):?><a class="btn btn-danger"><span class="fa fa-minus"></span> </a><?php endif;?>
+			<?php if (!empty($buttons['move'])):?><a class="btn btn-primary"><span class="fa fa-arrows"></span> </a><?php endif;?>
 		</div>
 	</div>
 	<?php endif; ?>
-	<div class="row-fluid">
-<?php foreach($form->getFieldsets() as $fieldset): ?>
-<fieldset class="<?php if (!empty($fieldset->class)){ echo $fieldset->class; } ?>">
-	<?php if (!empty($fieldset->label)):?>
-	<legend><?php echo JText::_($fieldset->label); ?></legend>
-	<?php endif; ?>
-<?php foreach($form->getFieldset($fieldset->name) as $field): ?>
-	<?php echo $field->renderField(); ?>
-<?php endforeach; ?>
-</fieldset>
-<?php endforeach; ?>
+	<div class="row">
+		<div class="container-fluid">
+			<?php foreach($form->getFieldsets() as $fieldset): ?>
+				<div class="<?php if (!empty($fieldset->class)){ echo $fieldset->class; } ?>">
+					<?php if (!empty($fieldset->label)):?>
+					<legend><?php echo JText::_($fieldset->label); ?></legend>
+					<?php endif; ?>
+					<?php foreach($form->getFieldset($fieldset->name) as $field): ?>
+						<?php echo $field->renderField(); ?>
+					<?php endforeach; ?>
+				</div>
+			<?php endforeach; ?>
+		</div>
 	</div>
 </div>

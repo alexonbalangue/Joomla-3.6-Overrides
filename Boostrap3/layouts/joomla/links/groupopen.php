@@ -9,5 +9,5 @@
 
 defined('JPATH_BASE') or die;
 ?>
-<h2 class="nav-header"><?php echo JFilterOutput::ampReplace(JText::_($displayData)); ?></h2>
-<ul class="j-links-group nav nav-list">
+<h2><?php echo JFilterOutput::ampReplace(JText::_($displayData)); ?></h2>
+<ul class="nav nav-pills nav-stacked">

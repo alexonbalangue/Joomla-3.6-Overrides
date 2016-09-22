@@ -1,10 +1,21 @@
-html
-editors
-form
-edit
-links
-modal
-///
+
+/******not yet touch | ******/
+com_contact
+com_mailto
+com_newsfeeds
+com_users
+mod_menu
+mod_languages
+mod_finder
+mod_feed
+
+/******done & Verify | missing some variable fix laters******/
+[PENDING sortablelist.php]-layouts/joomla/html
+-layouts/joomla/editors
+-layouts/joomla/form
+-layouts/joomla/edit
+-layouts/joomla/links
+[PENDING main.php]-layouts/joomla/modal
 [PENDING icons.php]-layouts/joomla/content
 -layouts/joomla/pagination
 -layouts/joomla/quickicons
@@ -19,6 +30,7 @@ modal
 -com_search
 -com_wrapper
 -com_content
+-com_finder
 [PENDING list_items.php/default.php/default_items.php]-com_tags
 
 
@@ -41,7 +53,6 @@ modal
 -mod_syndicate
 -mod_stats
 -mod_related_items
--mod_random_image
 -mod_random_image (no ramdom anymore)
 -mod_footer
 

@@ -46,7 +46,7 @@ extract($displayData);
  */
 
 // Including fallback code for HTML5 non supported browsers.
-JHtml::_('jquery.framework');
+//JHtml::_('jquery.framework');
 JHtml::_('script', 'system/html5fallback.js', false, true);
 ?>
 <input type="file"

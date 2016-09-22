@@ -18,21 +18,16 @@ $title = $displayData->getForm()->getValue('title');
 $published = $displayData->getForm()->getField('published');
 $saveHistory = $displayData->get('state')->get('params')->get('save_history', 0);
 ?>
-<div class="span2">
+<div class="col-md-2">
 	<h4><?php echo JText::_('JDETAILS'); ?></h4>
 	<hr />
-	<fieldset class="form-vertical">
 		<?php if (empty($title)) : ?>
-			<div class="control-group">
-				<div class="controls">
+			<div class="form-control">
 					<?php echo $displayData->getForm()->getValue('name'); ?>
-				</div>
 			</div>
 		<?php else : ?>
-			<div class="control-group">
-				<div class="controls">
-					<?php echo $displayData->getForm()->getValue('title'); ?>
-				</div>
+			<div class="form-control">
+				<?php echo $displayData->getForm()->getValue('title'); ?>
 			</div>
 		<?php endif; ?>
 		<?php if ($published) : ?>
@@ -51,5 +46,4 @@ $saveHistory = $displayData->get('state')->get('params')->get('save_history', 0)
 		<?php if ($saveHistory) : ?>
 			<?php echo $displayData->getForm()->renderField('version_note'); ?>
 		<?php endif; ?>
-	</fieldset>
 </div>

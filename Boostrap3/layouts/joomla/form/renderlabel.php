@@ -56,5 +56,5 @@ if ($required)
 
 ?>
 <label id="<?php echo $id; ?>" for="<?php echo $for; ?>" class="<?php echo implode(' ', $classes); ?>"<?php echo $title; ?><?php echo $position; ?>>
-	<?php echo $text; ?><?php if ($required) : ?><span class="star">&#160;*</span><?php endif; ?>
+	<?php echo $text; ?><?php if ($required) : ?><span class="fa fa-star">&#160;</span><?php endif; ?>
 </label>

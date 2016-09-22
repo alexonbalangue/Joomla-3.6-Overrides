@@ -46,7 +46,7 @@ $modalWidth = isset($params['modalWidth']) ? round((int) $params['modalWidth'], 
 
 if ($modalWidth && $modalWidth > 0 && $modalWidth <= 100)
 {
-	array_push($modalClasses, 'jviewport-width' . $modalWidth);
+	array_push($modalClasses, ' ' . $modalWidth);
 }
 
 $modalAttributes = array(

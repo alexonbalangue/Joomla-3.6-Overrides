@@ -44,7 +44,7 @@ if (!$saveHistory)
 }
 
 $html   = array();
-$html[] = '<fieldset class="form-vertical">';
+$html[] = ' ';
 
 foreach ($fields as $field)
 {
@@ -65,6 +65,6 @@ foreach ($fields as $field)
 	}
 }
 
-$html[] = '</fieldset>';
+$html[] = ' ';
 
 echo implode('', $html);

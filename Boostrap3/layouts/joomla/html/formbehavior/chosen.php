@@ -21,7 +21,7 @@ defined('JPATH_BASE') or die;
 extract($displayData);
 
 // Include jQuery
-JHtml::_('jquery.framework');
+//JHtml::_('jquery.framework');
 JHtml::_('script', 'jui/chosen.jquery.min.js', false, true, false, false, $debug);
 JHtml::_('stylesheet', 'jui/chosen.css', false, true);
 
