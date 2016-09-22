@@ -17,23 +17,23 @@ switch ((string) $item->text)
 {
 	// Check for "Start" item
 	case JText::_('JLIB_HTML_START') :
-		$icon = "icon-backward icon-first";
+		$icon = "fa fa-angle-double-right";
 		break;
 
 	// Check for "Prev" item
 	case $item->text == JText::_('JPREV') :
 		$item->text = JText::_('JPREVIOUS');
-		$icon = "icon-step-backward icon-previous";
+		$icon = "fa fa-angle-double-left";
 		break;
 
 	// Check for "Next" item
 	case JText::_('JNEXT') :
-		$icon = "icon-step-forward icon-next";
+		$icon = "fa fa-angle-right";
 		break;
 
 	// Check for "End" item
 	case JText::_('JLIB_HTML_END') :
-		$icon = "icon-forward icon-last";
+		$icon = "fa fa-angle-left";
 		break;
 
 	default:
@@ -43,7 +43,7 @@ switch ((string) $item->text)
 
 if ($icon !== null)
 {
-	$display = '<span class="' . $icon . '"></span>';
+	$display = '<i class="' . $icon . '"></i>';
 }
 
 if ($displayData['active'])

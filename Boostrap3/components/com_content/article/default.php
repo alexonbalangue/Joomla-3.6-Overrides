@@ -20,7 +20,7 @@ $user    = JFactory::getUser();
 $info    = $params->get('info_block_position', 0);
 JHtml::_('behavior.caption');
 ?>
-<div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
+<div class="<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
@@ -38,7 +38,7 @@ JHtml::_('behavior.caption');
 	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') ); ?>
 
 	<?php if (!$useDefList && $this->print) : ?>
-		<div id="pop-print" class="btn hidden-print">
+		<div id="pop-print" class="btn btn-default hidden-print">
 			<?php echo JHtml::_('icon.print_screen', $this->item, $params); ?>
 		</div>
 		<div class="clearfix"> </div>
@@ -95,11 +95,11 @@ JHtml::_('behavior.caption');
 	<?php if ($params->get('access-view')):?>
 	<?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
 	<?php $imgfloat = (empty($images->float_fulltext)) ? $params->get('float_fulltext') : $images->float_fulltext; ?>
-	<div class="pull-<?php echo htmlspecialchars($imgfloat); ?> item-image"> <img
+	<div class="pull-<?php echo htmlspecialchars($imgfloat); ?>"> <img
 	<?php if ($images->image_fulltext_caption):
 		echo 'class="caption"' . ' title="' . htmlspecialchars($images->image_fulltext_caption) . '"';
 	endif; ?>
-	src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>" itemprop="image"/> </div>
+	src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>" itemprop="image"> </div>
 	<?php endif; ?>
 	<?php
 	if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && !$this->item->paginationrelative):
@@ -142,8 +142,8 @@ JHtml::_('behavior.caption');
 	<?php $itemId = $active->id; ?>
 	<?php $link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false)); ?>
 	<?php $link->setVar('return', base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language))); ?>
-	<p class="readmore">
-		<a href="<?php echo $link; ?>" class="register">
+	<p>
+		<a href="<?php echo $link; ?>" class="btn btn-primary">
 		<?php $attribs = json_decode($this->item->attribs); ?>
 		<?php
 		if ($attribs->alternative_readmore == null) :

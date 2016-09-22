@@ -49,16 +49,16 @@ if ($currentPage >= $step)
 }
 ?>
 
-<div class="pagination pagination-toolbar clearfix" style="text-align: center;">
+<div class="pagination clearfix text-center">
 
 	<?php if ($showLimitBox) : ?>
-		<div class="limit pull-right">
+		<div class="pull-right">
 			<?php echo JText::_('JGLOBAL_DISPLAY_NUM') . $list['limitfield']; ?>
 		</div>
 	<?php endif; ?>
 
 	<?php if ($showPagesLinks && (!empty($pages))) : ?>
-		<ul class="pagination-list">
+		<ul class="pagination-lg">
 			<?php
 				echo JLayoutHelper::render('joomla.pagination.link', $pages['start']);
 				echo JLayoutHelper::render('joomla.pagination.link', $pages['previous']); ?>

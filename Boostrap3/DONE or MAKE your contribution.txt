@@ -1,8 +1,25 @@
+html
+editors
+form
+edit
+links
+modal
+///
+[PENDING icons.php]-layouts/joomla/content
+-layouts/joomla/pagination
+-layouts/joomla/quickicons
+-layouts/joomla/searchtools
+-layouts/joomla/sidebars
+-layouts/joomla/system
+[PENDING ALL]-layouts/joomla/toolbar
+-layouts/joomla/tinymce
 
 
 -com_finder
 -com_search
-
+-com_wrapper
+-com_content
+[PENDING list_items.php/default.php/default_items.php]-com_tags
 
 
 -mod_login

@@ -29,7 +29,7 @@ if (substr($className, -1) == 's')
 $tagsData = $displayData->get('category')->tags->itemTags;
 ?>
 <div>
-	<div class="<?php echo $className .'-category' . $displayData->pageclass_sfx;?>">
+	<div class="<?php echo $displayData->pageclass_sfx;?>">
 		<?php if ($params->get('show_page_heading')) : ?>
 			<h1>
 				<?php echo $displayData->escape($params->get('page_heading')); ?>
@@ -47,20 +47,20 @@ $tagsData = $displayData->get('category')->tags->itemTags;
 		<?php endif; ?>
 
 		<?php if ($params->get('show_description', 1) || $params->def('show_description_image', 1)) : ?>
-			<div class="category-desc">
+			<div class="text-center">
 				<?php if ($params->get('show_description_image') && $displayData->get('category')->getParams()->get('image')) : ?>
-					<img src="<?php echo $displayData->get('category')->getParams()->get('image'); ?>" alt="<?php echo htmlspecialchars($displayData->get('category')->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'); ?>"/>
+					<img src="<?php echo $displayData->get('category')->getParams()->get('image'); ?>" alt="<?php echo htmlspecialchars($displayData->get('category')->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'); ?>" width="90" height="90">
 				<?php endif; ?>
 				<?php if ($params->get('show_description') && $displayData->get('category')->description) : ?>
 					<?php echo JHtml::_('content.prepare', $displayData->get('category')->description, '', $extension . '.category.description'); ?>
 				<?php endif; ?>
-				<div class="clr"></div>
+				<div class="clearfix"></div>
 			</div>
 		<?php endif; ?>
 		<?php echo $displayData->loadTemplate($displayData->subtemplatename); ?>
 
 		<?php if ($displayData->get('children') && $displayData->maxLevel != 0) : ?>
-			<div class="cat-children">
+			<div class="well">
 				<?php if ($params->get('show_category_heading_title_text', 1) == 1) : ?>
 					<h3>
 						<?php echo JText::_('JGLOBAL_SUBCATEGORIES'); ?>

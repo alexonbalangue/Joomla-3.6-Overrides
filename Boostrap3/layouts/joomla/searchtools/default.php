@@ -33,17 +33,17 @@ JHtml::_('searchtools.form', $formSelector, $data['options']);
 
 $filtersClass = isset($data['view']->activeFilters) && $data['view']->activeFilters ? ' js-stools-container-filters-visible' : '';
 ?>
-<div class="js-stools clearfix">
+<div class="clearfix">
 	<div class="clearfix">
-		<div class="js-stools-container-bar">
+		<div>
 			<?php echo JLayoutHelper::render('joomla.searchtools.default.bar', $data); ?>
 		</div>
-		<div class="js-stools-container-list hidden-phone hidden-tablet">
+		<div class="idden-xs hidden-sm">
 			<?php echo JLayoutHelper::render('joomla.searchtools.default.list', $data); ?>
 		</div>
 	</div>
 	<!-- Filters div -->
-	<div class="js-stools-container-filters hidden-phone clearfix<?php echo $filtersClass; ?>">
+	<div class="hidden-xs clearfix<?php echo $filtersClass; ?>">
 		<?php echo JLayoutHelper::render('joomla.searchtools.default.filters', $data); ?>
 	</div>
 </div>

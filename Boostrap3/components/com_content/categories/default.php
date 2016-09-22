@@ -17,13 +17,13 @@ jQuery(function($) {
 	$('.categories-list').find('[id^=category-btn-]').each(function(index, btn) {
 		var btn = $(btn);
 		btn.on('click', function() {
-			btn.find('span').toggleClass('icon-plus');
-			btn.find('span').toggleClass('icon-minus');
+			btn.find('span').toggleClass('fa fa-plus');
+			btn.find('span').toggleClass('fa fa-minus');
 		});
 	});
 });");
 ?>
-<div class="categories-list<?php echo $this->pageclass_sfx;?>">
+<div class="<?php echo $this->pageclass_sfx;?>">
 	<?php
 		echo JLayoutHelper::render('joomla.content.categories_default', $this);
 		echo $this->loadTemplate('items');
