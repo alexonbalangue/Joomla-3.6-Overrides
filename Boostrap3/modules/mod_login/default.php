@@ -58,7 +58,7 @@ JHtml::_('bootstrap.tooltip');
 		</div>
 		<?php if (count($twofactormethods) > 1): ?>
 		<div id="form-login-secretkey" class="control-group">
-			<div id="form-login-secretkey" class="input-group input-group-lg">
+			<div id="form-login-secretkey" class="input-group btn-group-vertical">
 				<?php if (!$params->get('usetext')) : ?>
 					<span class="input-group-addon">
 						<span class="fa fa-star-o hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY'); ?>"></span>
@@ -97,12 +97,12 @@ JHtml::_('bootstrap.tooltip');
 		</div>
 		<?php
 			$usersConfig = JComponentHelper::getParams('com_users'); ?>
-			<div class="btn-group btn-group-vertical btn-group-justified btn-group-lg" role="group" aria-label="members"> 	
+			<div class="btn-group btn-group-vertical btn-group-justified text-center" role="group" aria-label="members"> 	
 				<?php if ($usersConfig->get('allowUserRegistration')) : ?>
 					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration&Itemid=' . UsersHelperRoute::getRegistrationRoute()); ?>" class="btn btn-default" role="button"><?php echo JText::_('MOD_LOGIN_REGISTER'); ?></a> 
 				<?php endif; ?>
-				<a href="<?php echo JRoute::_('index.php?option=com_users&view=remind&Itemid=' . UsersHelperRoute::getRemindRoute()); ?>" class="btn btn-default" role="button"><?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_USERNAME'); ?></a> 
-				<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset&Itemid=' . UsersHelperRoute::getResetRoute()); ?>" class="btn btn-default" role="button"><?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?></a> 
+				<a href="<?php echo JRoute::_('index.php?option=com_users&view=remind&Itemid=' . UsersHelperRoute::getRemindRoute()); ?>" class="btn btn-default"><?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_USERNAME'); ?></a> 
+				<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset&Itemid=' . UsersHelperRoute::getResetRoute()); ?>" class="btn btn-default"><?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?></a> 
 			</div>
 		<input type="hidden" name="option" value="com_users" />
 		<input type="hidden" name="task" value="user.login" />

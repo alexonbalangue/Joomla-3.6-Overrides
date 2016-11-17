@@ -19,10 +19,11 @@ JHtml::_('behavior.keepalive');
 	<?php else : ?>
 		<?php echo JText::sprintf('MOD_LOGIN_HINAME', htmlspecialchars($user->get('username'), ENT_COMPAT, 'UTF-8')); ?>
 	<?php endif; ?>
+		<a href="<?php echo JURI::base(root); ?>/espace-clientèles.html" class="btn btn-default">Accès à <br>votre espace client.</a>
 	</div>
 <?php endif; ?>
 	<div class="form-group">
-		<input type="submit" name="Submit" class="btn btn-danger" value="<?php echo JText::_('JLOGOUT'); ?>" />
+		<input type="submit" name="Submit" class="btn btn-lg btn-danger" value="<?php echo JText::_('JLOGOUT'); ?>" />
 		<input type="hidden" name="option" value="com_users" />
 		<input type="hidden" name="task" value="user.logout" />
 		<input type="hidden" name="return" value="<?php echo $return; ?>" />

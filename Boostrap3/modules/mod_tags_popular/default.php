@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
 			<?php echo htmlspecialchars($item->title, ENT_COMPAT, 'UTF-8'); ?></a>
 		<?php if ($display_count) : ?>
 			<span class=" badge"><?php echo $item->count; ?></span>
-		<?php endif; ?>&nbsp; - &nbsp;
+		<?php endif; ?> - 
 	<?php endforeach; ?>
 <?php endif; ?>
 </div>
