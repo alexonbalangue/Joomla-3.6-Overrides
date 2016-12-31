@@ -20,7 +20,6 @@ defined('_JEXEC') or die;
 	<?php echo '<h3>' . JText::_('COM_CONTACT_LINKS') . '</h3>';  ?>
 <?php endif; ?>
 
-<div class="contact-links">
 	<ul class="nav nav-tabs nav-stacked">
 		<?php
 		// Letters 'a' to 'e'
@@ -32,8 +31,8 @@ defined('_JEXEC') or die;
 				continue;
 			endif;
 
-			// Add 'http://' if not present
-			$link = (0 === strpos($link, 'http')) ? $link : 'http://' . $link;
+			// Add 'https://' if not present = require ssl
+			$link = (0 === strpos($link, 'https')) ? $link : 'https://' . $link;
 
 			// If no label is present, take the link
 			$label = ($label) ? $label : $link;
@@ -45,7 +44,6 @@ defined('_JEXEC') or die;
 			</li>
 		<?php endforeach; ?>
 	</ul>
-</div>
 
 <?php if ($this->params->get('presentation_style') == 'sliders') : ?>
 	<?php echo JHtml::_('bootstrap.endSlide'); ?>

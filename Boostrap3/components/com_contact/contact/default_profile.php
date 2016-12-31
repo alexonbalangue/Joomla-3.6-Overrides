@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 ?>
 <?php if (JPluginHelper::isEnabled('user', 'profile')) :
 	$fields = $this->item->profile->getFieldset('profile'); ?>
-	<div class="contact-profile" id="users-profile-custom">
+	<div id="users-profile-custom">
 		<dl class="dl-horizontal">
 			<?php foreach ($fields as $profile) :
 				if ($profile->value) :
@@ -25,7 +25,7 @@ defined('_JEXEC') or die;
 							if ($v_http == "http") :
 								echo '<dd><a href="' . $profile->text . '">' . JStringPunycode::urlToUTF8($profile->text) . '</a></dd>';
 							else :
-								echo '<dd><a href="http://' . $profile->text . '">' . JStringPunycode::urlToUTF8($profile->text) . '</a></dd>';
+								echo '<dd><a href="//' . $profile->text . '">' . JStringPunycode::urlToUTF8($profile->text) . '</a></dd>';
 							endif;
 							break;
 

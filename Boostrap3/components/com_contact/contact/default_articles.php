@@ -13,7 +13,6 @@ require_once JPATH_SITE . '/components/com_content/helpers/route.php';
 
 ?>
 <?php if ($this->params->get('show_articles')) : ?>
-<div class="contact-articles">
 	<ul class="nav nav-tabs nav-stacked">
 		<?php foreach ($this->item->articles as $article) :	?>
 			<li>
@@ -21,5 +20,4 @@ require_once JPATH_SITE . '/components/com_content/helpers/route.php';
 			</li>
 		<?php endforeach; ?>
 	</ul>
-</div>
 <?php endif; ?>

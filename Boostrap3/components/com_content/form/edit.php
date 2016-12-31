@@ -50,12 +50,12 @@ JFactory::getDocument()->addScriptDeclaration("
 		<div class="btn-toolbar">
 			<div class="btn-group">
 				<button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('article.save')">
-					<span class="icon-ok"></span><?php echo JText::_('JSAVE') ?>
+					<i class="fa check-square-o"></i> <?php echo JText::_('JSAVE') ?>
 				</button>
 			</div>
 			<div class="btn-group">
 				<button type="button" class="btn" onclick="Joomla.submitbutton('article.cancel')">
-					<span class="icon-cancel"></span><?php echo JText::_('JCANCEL') ?>
+					<i class="fa fa-ban"></i> <?php echo JText::_('JCANCEL') ?>
 				</button>
 			</div>
 			<?php if ($params->get('save_history', 0) && $this->item->id) : ?>
@@ -65,7 +65,7 @@ JFactory::getDocument()->addScriptDeclaration("
 			<?php endif; ?>
 		</div>
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#editor" data-toggle="tab"><?php echo JText::_('COM_CONTENT_ARTICLE_CONTENT') ?></a></li>
+				<li><a href="#editor" data-toggle="tab"><?php echo JText::_('COM_CONTENT_ARTICLE_CONTENT') ?></a></li>
 				<?php if ($params->get('show_urls_images_frontend') ) : ?>
 				<li><a href="#images" data-toggle="tab"><?php echo JText::_('COM_CONTENT_IMAGES_AND_URLS') ?></a></li>
 				<?php endif; ?>
@@ -78,7 +78,7 @@ JFactory::getDocument()->addScriptDeclaration("
 			</ul>
 
 			<div class="tab-content">
-				<div class="tab-pane active" id="editor">
+				<div class="tab-pane" id="editor">
 					<?php echo $this->form->renderField('title'); ?>
 
 					<?php if (is_null($this->item->id)) : ?>

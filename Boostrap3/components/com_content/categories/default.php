@@ -23,9 +23,8 @@ jQuery(function($) {
 	});
 });");
 ?>
-<div class="<?php echo $this->pageclass_sfx;?>">
+
 	<?php
 		echo JLayoutHelper::render('joomla.content.categories_default', $this);
 		echo $this->loadTemplate('items');
 	?>
-</div>
