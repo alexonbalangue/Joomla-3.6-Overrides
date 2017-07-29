@@ -16,10 +16,12 @@ $title   = empty($displayData['title']) ? '' : (' title="' . $this->escape($disp
 $text    = empty($displayData['text']) ? '' : ('<span>' . $displayData['text'] . '</span>')
 
 ?>
-<div class="row-fluid"<?php echo $id; ?>>
-	<div class="span12">
-		<a href="<?php echo $displayData['link']; ?>"<?php echo $target . $onclick . $title; ?>>
-			<span class="icon-<?php echo $displayData['image']; ?>"></span> <?php echo $text; ?>
-		</a>
+<div class="row">
+	<div class="container-fluid"<?php echo $id; ?>>
+		<div class="col-md-12">
+			<a href="<?php echo $displayData['link']; ?>"<?php echo $target . $onclick . $title; ?>>
+				<span class="fa fa-<?php echo $displayData['image']; ?>"></span> <?php echo $text; ?>
+			</a>
+		</div>
 	</div>
 </div>

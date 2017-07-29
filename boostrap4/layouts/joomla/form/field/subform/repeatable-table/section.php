@@ -21,7 +21,7 @@ extract($displayData);
 
 ?>
 
-<tr class="subform-repeatable-group" data-base-name="<?php echo $basegroup; ?>" data-group="<?php echo $group; ?>">
+<tr data-base-name="<?php echo $basegroup; ?>" data-group="<?php echo $group; ?>">
 	<?php foreach($form->getGroup('') as $field): ?>
 	<td>
 		<?php echo $field->renderField(); ?>
@@ -30,9 +30,9 @@ extract($displayData);
 	<?php if (!empty($buttons)):?>
 	<td>
 		<div class="btn-group">
-			<?php if (!empty($buttons['add'])):?><a class="group-add btn btn-mini button btn-success"><span class="icon-plus"></span> </a><?php endif;?>
-			<?php if (!empty($buttons['remove'])):?><a class="group-remove btn btn-mini button btn-danger"><span class="icon-minus"></span> </a><?php endif;?>
-			<?php if (!empty($buttons['move'])):?><a class="group-move btn btn-mini button btn-primary"><span class="icon-move"></span> </a><?php endif;?>
+			<?php if (!empty($buttons['add'])):?><a class="btn btn-success"><i class="fa fa-plus"></i> </a><?php endif;?>
+			<?php if (!empty($buttons['remove'])):?><a class="btn btn-danger"><span class="fa fa-minus"></span> </a><?php endif;?>
+			<?php if (!empty($buttons['move'])):?><a class="btn btn-primary"><span class="fa fa-arrows"></span> </a><?php endif;?>
 		</div>
 	</td>
 	<?php endif; ?>

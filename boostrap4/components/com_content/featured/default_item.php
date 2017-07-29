@@ -19,11 +19,11 @@ $info    = $this->item->params->get('info_block_position', 0);
 
 <?php if ($this->item->state == 0 || strtotime($this->item->publish_up) > strtotime(JFactory::getDate())
 	|| ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != JFactory::getDbo()->getNullDate())) : ?>
-	<div class="system-unpublished">
+	<div class="sr-only">
 <?php endif; ?>
 
 <?php if ($params->get('show_title')) : ?>
-	<h2 class="item-title" itemprop="name">
+	<h2 itemprop="name">
 	<?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
 		<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)); ?>" itemprop="url">
 			<?php echo $this->escape($this->item->title); ?>

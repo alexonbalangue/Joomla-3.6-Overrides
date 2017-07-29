@@ -36,28 +36,30 @@ if ($multiple)
 $sublayout = empty($groupByFieldset) ? 'section' : 'section-byfieldsets';
 ?>
 
-<div class="row-fluid">
-	<div class="subform-repeatable-wrapper subform-layout">
-		<div class="subform-repeatable"
-			data-bt-add="a.group-add" data-bt-remove="a.group-remove" data-bt-move="a.group-move"
-			data-repeatable-element="div.subform-repeatable-group" data-minimum="<?php echo $min; ?>" data-maximum="<?php echo $max; ?>">
-			<?php if (!empty($buttons['add'])):?>
-			<div class="btn-toolbar">
-				<div class="btn-group">
-					<a class="group-add btn btn-mini button btn-success"><span class="icon-plus"></span> </a>
+<div class="row">
+	<div class="container-fluid">
+		<div class="subform-repeatable-wrapper subform-layout">
+			<div class="subform-repeatable"
+				data-bt-add="a.group-add" data-bt-remove="a.group-remove" data-bt-move="a.group-move"
+				data-repeatable-element="div.subform-repeatable-group" data-minimum="<?php echo $min; ?>" data-maximum="<?php echo $max; ?>">
+				<?php if (!empty($buttons['add'])):?>
+				<div class="btn-toolbar">
+					<div class="btn-group">
+						<a class="group-add btn btn-success"><i class="fa fa-plus"></i> </a>
+					</div>
 				</div>
+				<?php endif; ?>
+			<?php
+			foreach($forms as $k => $form):
+				echo $this->sublayout($sublayout, array('form' => $form, 'basegroup' => $fieldname, 'group' => $fieldname . $k, 'buttons' => $buttons));
+			endforeach;
+			?>
+			<?php if ($multiple):?>
+			<script type="text/subform-repeatable-template-section" class="subform-repeatable-template-section">
+			<?php echo $this->sublayout($sublayout, array('form' => $tmpl, 'basegroup' => $fieldname, 'group' => $fieldname . 'X', 'buttons' => $buttons))?>
+			</script>
+			<?php endif;?>
 			</div>
-			<?php endif; ?>
-		<?php
-		foreach($forms as $k => $form):
-			echo $this->sublayout($sublayout, array('form' => $form, 'basegroup' => $fieldname, 'group' => $fieldname . $k, 'buttons' => $buttons));
-		endforeach;
-		?>
-		<?php if ($multiple):?>
-		<script type="text/subform-repeatable-template-section" class="subform-repeatable-template-section">
-		<?php echo $this->sublayout($sublayout, array('form' => $tmpl, 'basegroup' => $fieldname, 'group' => $fieldname . 'X', 'buttons' => $buttons))?>
-		</script>
-		<?php endif;?>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,1502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.7" client="site" method="upgrade">
+	<name>Module - Meta-Tags</name>
+	<author>Alexon Balangue</author>
+	<creationDate>31 May 2017</creationDate>
+	<copyright>Copyright (C) 2012-2017. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<authorEmail>moi.sites@alexonbalangue.me</authorEmail>
+	<authorUrl>www.alexonbalangue.me</authorUrl>
+	<version>4.1.8</version>
+	<description>MOD_METATAGS_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_metatags">mod_metatags.php</filename>
+		<filename>mod_metatags.xml</filename>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>	
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_metatags.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_metatags.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.mod_metatags.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.mod_metatags.sys.ini</language>
+	</languages>
+	
+	<administration>
+		<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_metatags.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_metatags.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.mod_metatags.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.mod_metatags.sys.ini</language>
+		</languages>
+	</administration>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					type="spacer" 
+					hr="true" />	
+			</fieldset>
+			<fieldset name="mod_meta-seo" label="SEO Basic/Advance">
+				<field 
+					name="Rating"
+					type="list"
+					default=""
+					label="JFIELD_MOD_METATAGS_RATING_LABEL"
+					description="JFIELD_MOD_METATAGS_RATING_DESC">
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="general">JFIELD_MOD_METATAGS_RATING_GENERAL_OPTION</option>
+						<option value="mature">JFIELD_MOD_METATAGS_RATING_MATURE_OPTION</option>
+						<option value="restricted">JFIELD_MOD_METATAGS_RATING_RESTRICTED_OPTION</option>
+						<option value="RTA-5042-1996-1400-1577-RTA">RTA http://www.rtalabel.org/index.php?content=howto</option>
+						<option value="14 years">JFIELD_MOD_METATAGS_RATING_14YEARS_OPTION</option>
+						<option value="safe for kids">JFIELD_MOD_METATAGS_RATING_SAFEFORKIDS_OPTION</option>
+				</field>
+				<field 
+					name="Distribution"
+					type="list"
+					default=""
+					label="JFIELD_MOD_METATAGS_DISTRIBUTION_LABEL"
+					description="JFIELD_MOD_METATAGS_DISTRIBUTION_DESC">
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="global">JFIELD_MOD_METATAGS_DISTRIBUTION_GLOBAL_OPTION</option>
+						<option value="local">JFIELD_MOD_METATAGS_DISTRIBUTION_LOCAL_OPTION</option>
+						<option value="iu">JFIELD_MOD_METATAGS_DISTRIBUTION_IU_OPTION</option>
+				</field>
+				<field 
+					name="news-keywords"
+					type="text"
+					default=""
+					size="50"
+					label="news_keyword"
+					description="Google" />
+				<field 
+					name="Publisher"
+					type="text"
+					default="" 
+					multiple="true" 
+					label="JFIELD_MOD_METATAGS_PUBLISHER_LABEL"
+					description="JFIELD_MOD_METATAGS_PUBLISHER_DESC" />
+				<field 
+					name="Category"
+					type="text"
+					default=""
+					size="50"
+					label="JFIELD_MOD_METATAGS_CATEGORY_LABEL"
+					description="JFIELD_MOD_METATAGS_CATEGORY_DESC" />
+				<field 
+					name="startver"
+					type="text"
+					default=""
+					size="50"
+					label="JFIELD_MOD_METATAGS_STARTVER_LABEL"
+					description="JFIELD_MOD_METATAGS_STARTVER_DESC" />
+				<field 
+					name="expires"
+					type="text"
+					default="never"
+					label="JFIELD_MOD_METATAGS_EXPIRES_LABEL"
+					description="JFIELD_MOD_METATAGS_EXPIRES_DESC" />
+				<field name="Date-Creation-yyyymmdd" type="calendar" default="2000-02-01" label="JFIELD_MOD_METATAGS_DATECREATESITE_LABEL" description="JFIELD_MOD_METATAGS_DATECREATESITE_DESC" format="%Y-%m-%d" />
+				<field name="Date-Revision-yyyymmdd" type="calendar" default="2000-03-01" label="JFIELD_MOD_METATAGS_DATEUPDATESITE_LABEL" description="JFIELD_MOD_METATAGS_DATEUPDATESITE_DESC" format="%Y%-m%-d" />
+				<field 
+					name="classification-meta"
+					type="list"
+					default=""
+					label="JFIELD_MOD_METATAGS_CLASSIFICATION_LABEL"
+					description="JFIELD_MOD_METATAGS_CLASSIFICATION_DESC" >
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="1">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_1</option>
+						<option value="2">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_2</option>
+						<option value="3">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_3</option>
+						<option value="4">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_4</option>
+						<option value="5">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_5</option>
+						<option value="6">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_6</option>
+						<option value="7">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_7</option>
+						<option value="8">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_8</option>
+						<option value="9">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_9</option>
+						<option value="10">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_10</option>
+						<option value="11">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_11</option>
+						<option value="12">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_12</option>
+						<option value="13">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_13</option>
+						<option value="14">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_14</option>
+						<option value="15">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_15</option>
+						<option value="16">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_16</option>
+						<option value="17">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_17</option>
+						<option value="18">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_18</option>
+						<option value="19">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_19</option>
+						<option value="20">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_20</option>
+						<option value="21">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_21</option>
+						<option value="22">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_22</option>
+						<option value="23">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_23</option>
+						<option value="24">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_24</option>
+						<option value="25">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_25</option>
+						<option value="26">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_26</option>
+						<option value="27">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_27</option>
+						<option value="28">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_28</option>
+						<option value="29">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_29</option>
+						<option value="30">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_30</option>
+						<option value="31">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_31</option>
+						<option value="32">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_32</option>
+						<option value="33">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_33</option>
+				</field>
+				<field 
+					name="Revisit-After"
+					type="list"
+					default=""
+					label="JFIELD_MOD_METATAGS_REVISITAFTER_LABEL"
+					description="JFIELD_MOD_METATAGS_REVISITAFTER_DESC">
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="1 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_1</option>
+						<option value="4 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_2</option>
+						<option value="7 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_3</option>
+						<option value="10 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_4</option>
+						<option value="14 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_5</option>
+						<option value="17 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_6</option>
+						<option value="20 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_7</option>
+						<option value="24 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_8</option>
+						<option value="27 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_9</option>
+						<option value="30 days">JFIELD_MOD_METATAGS_REVISITAFTER_OPTION_10</option>
+				</field>
+				<field 
+					name="robots"
+					type="list"
+					default=""
+					label="JFIELD_MOD_METATAGS_ROBOTS_LABEL"
+					description="JFIELD_MOD_METATAGS_ROBOTS_DESC">
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="noopd">noopd</option>
+						<option value="noopd, all">noopd, all</option>
+						<option value="index, follow">index, follow</option>
+						<option value="noindex, follow">noindex, follow</option>
+						<option value="index, nofollow">index, nofollow</option>
+						<option value="noindex, nofollow">noindex, nofollow</option>
+						<option value="all">all</option>
+						<option value="noopd, noydir, follow, index, all">noopd, noydir, follow, index, all</option>
+						<option value="noopd, noydir">noopd, noydir</option>
+						<option value="noopd, noydir, follow, index">noopd, noydir, follow, index</option>
+						<option value="noopd, noydir, nofollow, noindex">noopd, noydir, nofollow, noindex</option>
+						<option value="noopd, noydir, nofollow, index">noopd, noydir, nofollow, index</option>
+						<option value="noopd, noydir, follow, noindex">noopd, noydir, follow, noindex</option>
+				</field>
+				<field 
+					name="rights-standard"
+					type="list"
+					default=""
+					label="copyright"
+					description="Copyright status images">
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="pd">Public domain</option>
+						<option value="cc by-sa">Creative Commons Attribution</option>
+						<option value="cc by-nd">Creative Commons  NoDerivs</option>
+						<option value="cc by-nc">Creative Commons Attribution-NonCommercial</option>
+						<option value="cc by-nc-sa">Creative Commons Attribution-NonCommercial-ShareAlike</option>
+						<option value="cc by-nc-nd">Creative Commons Attribution-NonCommercial-NoDerivs</option>
+						<option value="cc by-nd-sa">Creative Commons Attribution-NoDerivs</option>
+				</field>
+			</fieldset>
+			<fieldset name="mod_meta-repsecbank" label="Reputation/Security/Bank">
+				<field 
+					name="wot-verification"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_WOTKEY_LABEL"
+					description="JFIELD_MOD_METATAGS_WOTKEY_DESC" />
+				<field 
+					name="Content-Security-Policy"
+					type="text"
+					default=""
+					label="Content Security Policy (CSP)"
+					description="exemple: script-src 'self'" />
+				<field 
+					name="witgetdotcom"
+					type="text"
+					default=""
+					label="witget.com"
+					description="info http://witget.com" />
+				<field 
+					name="blogcatalogdotcom"
+					type="text"
+					default=""
+					label="blogcatalog.com"
+					description="info http://blogcatalog.com" />
+				<field 
+					name="audiencemeta"
+					type="list"
+					default=""
+					label="Audience"
+					description="">
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="all">JFIELD_MOD_METATAGS_AUDIENCE_OPTION1</option>
+						<option value="adult">JFIELD_MOD_METATAGS_AUDIENCE_OPTION2</option>
+						<option value="child">JFIELD_MOD_METATAGS_AUDIENCE_OPTION3</option>
+						<option value="teen">JFIELD_MOD_METATAGS_AUDIENCE_OPTION4</option>
+						<option value="grownup">JFIELD_MOD_METATAGS_AUDIENCE_OPTION5</option>
+						<option value="parent">JFIELD_MOD_METATAGS_AUDIENCE_OPTION6</option>
+						<option value="teacher">JFIELD_MOD_METATAGS_AUDIENCE_OPTION7</option>
+						<option value="elementary school student">JFIELD_MOD_METATAGS_AUDIENCE_OPTION8</option>
+						<option value="high school">JFIELD_MOD_METATAGS_AUDIENCE_OPTION9</option>
+						<option value="elhi">JFIELD_MOD_METATAGS_AUDIENCE_OPTION10</option>
+						<option value="college student">JFIELD_MOD_METATAGS_AUDIENCE_OPTION11</option>
+						<option value="business">JFIELD_MOD_METATAGS_AUDIENCE_OPTION12</option>
+						<option value="health">JFIELD_MOD_METATAGS_AUDIENCE_OPTION13</option>
+						<option value="patient">JFIELD_MOD_METATAGS_AUDIENCE_OPTION14</option>
+						<option value="lawyer">JFIELD_MOD_METATAGS_AUDIENCE_OPTION15</option>
+						<option value="law client">JFIELD_MOD_METATAGS_AUDIENCE_OPTION16</option>
+						<option value="craft">JFIELD_MOD_METATAGS_AUDIENCE_OPTION17</option>
+						<option value="artist">JFIELD_MOD_METATAGS_AUDIENCE_OPTION18</option>
+						<option value="military">JFIELD_MOD_METATAGS_AUDIENCE_OPTION19</option>
+						<option value="news">JFIELD_MOD_METATAGS_AUDIENCE_OPTION20</option>
+						<option value="introductory">JFIELD_MOD_METATAGS_AUDIENCE_OPTION21</option>
+						<option value="intermediate">JFIELD_MOD_METATAGS_AUDIENCE_OPTION22</option>
+						<option value="advanced">JFIELD_MOD_METATAGS_AUDIENCE_OPTION23</option>
+						<option value="sholar">JFIELD_MOD_METATAGS_AUDIENCE_OPTION24</option>
+						<option value="popular">JFIELD_MOD_METATAGS_AUDIENCE_OPTION25</option>
+						<option value="older">JFIELD_MOD_METATAGS_AUDIENCE_OPTION26</option>
+						<option value="institution">JFIELD_MOD_METATAGS_AUDIENCE_OPTION27</option>
+						<option value="government">JFIELD_MOD_METATAGS_AUDIENCE_OPTION28</option>
+						<option value="viewers">JFIELD_MOD_METATAGS_AUDIENCE_OPTION29</option>
+						<option value="listeners">JFIELD_MOD_METATAGS_AUDIENCE_OPTION30</option>
+						<option value="tts">JFIELD_MOD_METATAGS_AUDIENCE_OPTION31</option>
+				</field>
+				<field 
+					name="bitly-verification"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_BITLYAPI_LABEL"
+					description="JFIELD_MOD_METATAGS_BITLYAPI_DESC" />
+				<field 
+					name="okpays-verification"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_OKPAYAPI_LABEL"
+					description="JFIELD_MOD_METATAGS_OKPAYAPI_DESC" />
+				<field 
+					name="detectify-verification"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_DETECTIFYVAPI_LABEL"
+					description="JFIELD_MOD_METATAGS_DETECTIFYVAPI_DESC" />
+				<field 
+					name="mybitcoin-account"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_MYACCOUNTBITCOIN_LABEL"
+					description="JFIELD_MOD_METATAGS_MYACCOUNTBITCOIN_DESC" />
+				<field 
+					name="blazerr_ssl"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="JFIELD_MOD_METATAGS_BLAZERR_SSL_LABEL"
+					description="JFIELD_MOD_METATAGS_BLAZERR_SSL_DESC">
+						<option value="no">JYes</option>
+						<option value="yes">JNo</option>
+				</field>
+				<field 
+					name="linkstant"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_LINKSTANT_LABEL"
+					description="JFIELD_MOD_METATAGS_LINKSTANT_DESC" />
+				<field 
+					name="sefeweb-norton"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_SEFEWEBNORTON_LABEL"
+					description="JFIELD_MOD_METATAGS_SEFEWEBNORTON_DESC" />
+			</fieldset>
+			<fieldset name="mod_meta-geomap" label="GEO MAP">
+				<field 
+					name="georegion"
+					type="text"
+					label="JFIELD_MOD_METATAGS_REGION_LABEL"
+					default=""
+					description="JFIELD_MOD_METATAGS_REGION_DESC" />
+				<field 
+					name="geoplacename"
+					type="text"
+					label="JFIELD_MOD_METATAGS_PLACENAME_LABEL"
+					default=""
+					description="JFIELD_MOD_METATAGS_PLACENAME_DESC" />
+				<field 
+					name="geoposition"
+					type="text"
+					label="JFIELD_MOD_METATAGS_POSITION_LABEL"
+					default=""
+					description="JFIELD_MOD_METATAGS_POSITION_DESC" />
+				<field 
+					name="ICBM"
+					type="text"
+					label="JFIELD_MOD_METATAGS_ICBM_LABEL"
+					default=""
+					description="JFIELD_MOD_METATAGS_ICBM_DESC" />
+				<field 
+					name="Location"
+					type="text"
+					default=""
+					size="50"
+					label="JFIELD_MOD_METATAGS_LOCATION_LABEL"
+					description="JFIELD_MOD_METATAGS_LOCATION_DESC" />
+			</fieldset>
+			<fieldset name="mod_meta-search" label="SEARCH/CRAWL/SPIDER">
+				<field 
+					name="googlekey" 
+					type="text" 
+					default="" 
+					size="50" 
+					label="JFIELD_MOD_METATAGS_GOOGLEKEY_LABEL" 
+					description="JFIELD_MOD_METATAGS_GOOGLEKEY_DESC" />
+				<field 
+					name="Pinterestkey" 
+					type="text" 
+					default="" 
+					size="50" 
+					label="Pinterest" 
+					description="JFIELD_MOD_METATAGS_PINTERESTKEY_DESC" />
+				<field 
+					name="pingdomkey" 
+					type="text" 
+					default="" 
+					size="50" 
+					label="Pinterest" 
+					description="JFIELD_MOD_METATAGS_PINGDOMKEY_DESC" />
+				<field 
+					name="yandexkey" 
+					type="text" 
+					default="" 
+					size="50" 
+					label="JFIELD_MOD_METATAGS_YANDEXKEY_LABEL" 
+					description="JFIELD_MOD_METATAGS_YANDEXKEY_DESC" />
+				<field 
+					name="bingkey" 
+					type="text" 
+					default="" 
+					size="50" 
+					label="JFIELD_MOD_METATAGS_BINGKEY_LABEL" 
+					description="JFIELD_MOD_METATAGS_BINGKEY_DESC" />
+			
+				<field 
+					name="alexakey" 
+					type="text" 
+					default="" 
+					size="50" 
+					label="JFIELD_MOD_METATAGS_ALEXAKEY_LABEL" 
+					description="JFIELD_MOD_METATAGS_ALEXAKEY_DESC" />
+				<field 
+					name="baidukey" 
+					type="text" 
+					default="" 
+					size="50" 
+					label="JFIELD_MOD_METATAGS_BAIDUKEY_LABEL" 
+					description="JFIELD_MOD_METATAGS_BAIDUKEY_DESC" />
+				<field 
+					name="majestickey" 
+					type="text" 
+					default="" 
+					size="50" 
+					label="JFIELD_MOD_METATAGS_MAJESTICKEY_LABEL" 
+					description="JFIELD_MOD_METATAGS_MAJESTICKEY_DESC" />
+				<field 
+					name="myblogguestkey" 
+					type="text" 
+					default="" 
+					size="50" 
+					label="JFIELD_MOD_METATAGS_MYBLOGGUESTKEY_LABEL" 
+					description="JFIELD_MOD_METATAGS_MYBLOGGUESTKEY_DESC" />
+				<field 
+					name="URL-OpenSearch" 
+					type="url" 
+					default="" 
+					size="50" 
+					label="Opensearch URL" 
+					description="Files XML" />
+				<field 
+					name="URL-Sitemap" 
+					type="url" 
+					default="" 
+					size="50" 
+					label="Sitemap URL" 
+					description="Files XML" />
+			</fieldset>
+			<fieldset name="mod_meta-twittercard" label="Twitter Cards">
+				<field 
+					name="choosetwitter_card"
+					type="list"
+					default=""
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_CARD_LABEL"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_CARD_DESC" >
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="summary">JFIELD_MOD_METATAGS_TWITTERMETA_CARD_OPTION_SUM</option>
+						<option value="summary_large_image">JFIELD_MOD_METATAGS_TWITTERMETA_CARD_OPTION_SLI</option>
+						<option value="product">JFIELD_MOD_METATAGS_TWITTERMETA_CARD_OPTION_PRO</option>
+						<option value="photo">JFIELD_MOD_METATAGS_TWITTERMETA_CARD_OPTION_PHO</option>
+						<option value="player">JFIELD_MOD_METATAGS_TWITTERMETA_CARD_OPTION_PLA</option>
+						<option value="app">JFIELD_MOD_METATAGS_TWITTERMETA_CARD_OPTION_APP</option>
+						<option value="gallery">JFIELD_MOD_METATAGS_TWITTERMETA_CARD_OPTION_GAL</option>
+				</field>					
+				<field 
+					type="spacer"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_PROD_LABEL" />					
+				<field 
+					type="text"
+					name="twitterprod_data1"
+					default="$5 USD"
+					label="twitter:data1"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_PROD_DATA1_DESC" />
+				<field 
+					type="text"
+					name="twitterprod_label"
+					default="Label"
+					label="twitter:label1"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_PROD_DATA2_DESC" />
+				<field 
+					type="text"
+					name="twitterprod_data2"
+					default="€10 EUR"
+					label="twitter:data2"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_PROD_DATA3_DESC" />
+				<field 
+					type="text"
+					name="twitterprod_label2"
+					default="Label2"
+					label="twitter:label2"
+					description=" JFIELD_MOD_METATAGS_TWITTERMETA_PROD_DATA4_DESC" />
+					
+				<field 
+					type="spacer"
+					hr="true" />
+				<field 
+					type="spacer"
+					label="Photo" />
+				<field 
+					name="photo_twitter" 
+					type="media" 
+					default="" 
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_LABEL" 
+					description="" 
+					directory="" />
+				<field 
+					type="text"
+					name="photo_twitterwidth"
+					default="600"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_IMGSIZE_TW_W"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SIZEIMG" />
+				<field 
+					type="text"
+					name="photo_twitterheight"
+					default="450"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_IMGSIZE_TW_H"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SIZEIMG" />
+				<field 
+					type="spacer"
+					hr="true" />
+				<field 
+					type="spacer"
+					label="Player" />
+				<field 
+					name="video_twitter" 
+					type="url" 
+					default="" 
+					label="URL Video" 
+					description="Put a link of your video (the HTTPS is require)." />
+					
+				<field 
+					type="text"
+					name="video_twitterwidth"
+					default="600"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_IMGSIZE_TW_W"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMGW_DESC" />
+				<field 
+					type="text"
+					name="video_twitterheight"
+					default="450"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_IMGSIZE_TW_H"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMGH_DESC" />
+				<field 
+					type="spacer"
+					hr="true" />
+				<field 
+					type="spacer"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_GALL_LABEL" />
+				<field 
+					type="media"
+					name="twitterimg_src0"
+					default="twitterimg_src0"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_LABEL"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_DESC" 
+					directory="" />
+				<field 
+					type="media"
+					name="twitterimg_src1"
+					default="twitterimg_src1"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_LABEL"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_DESC" 
+					directory="" />
+				<field 
+					type="media"
+					name="twitterimg_src2"
+					default="twitterimg_src2"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_LABEL"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_DESC" 
+					directory="" />
+				<field 
+					type="media"
+					name="twitterimg_src3"
+					default="twitterimg_src3"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_LABEL"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_DESC" 
+					directory="" />
+				<field 
+					type="spacer"
+					hr="true" />	
+				<field 
+					type="spacer"
+					label="App" />
+				<field 
+					type="text"
+					name="idiphoneapps"
+					default=""
+					label="ID iPhone"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_APPSID_IPHONE_DESC" />
+				<field 
+					type="radio"
+					name="format_detection_SafariiOS"
+					default="yes"
+					class="btn-group btn-group-yesno"
+					label="Format detection (Safari/iOS)"
+					description="JFIELD_MOD_METATAGS_FORMATDETECTION_SAFARIIOS_DESC">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					type="text"
+					name="idipadapps"
+					default=""
+					label="ID iPad"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_APPSID_IPAD_DESC" />
+				<field 
+					type="text"
+					name="idandroidapps"
+					default=""
+					label="ID Google PLay"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_APPSID_ANDROID_DESC" />
+				<field 
+					type="text"
+					name="nameiphoneapps"
+					default=""
+					label="NAME iPhone"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_APPSNAME_IPHONE_DESC" />
+				<field 
+					type="text"
+					name="nameipadapps"
+					default=""
+					label="NAME iPad"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_APPSNAME_IPAD_DESC" />
+				<field 
+					type="text"
+					name="nameandroidapps"
+					default=""
+					label="NAME Google PLay"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_APPSNAME_ANDROID_DESC" />
+				<field 
+					type="url"
+					name="urliphoneapps"
+					default=""
+					label="URL iphone"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_APPSURL_IPHONE_DESC" />
+				<field 
+					type="url"
+					name="urlipadapps"
+					default=""
+					label="URL ipad"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_APPSURL_IPAD_DESC" />
+				<field 
+					type="url"
+					name="urlandroidapps"
+					default=""
+					label="URL Google PLay"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_APPSURL_ANDROID_DESC" />
+				<field 
+					type="url"
+					name="urlgooglechrome-webapps"
+					default=""
+					label="URL web apps (Google Chrome)"
+					description="JFIELD_MOD_METATAGS_URL_APPS_GOOGLECHROME_DESC" />
+				<field 
+					type="text"
+					name="langsapps"
+					default=""
+					label="MOD_TWITTERMETAPPS_LANGS_LABEL"
+					description="MOD_TWITTERMETAPPS_LANGS_DESC" />
+				<field 
+					type="spacer"
+					hr="true" />	
+				<field 
+					type="spacer"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_NAME_LABEL" />
+				<field 
+					type="text"
+					name="creatortwitter"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCCREAT_LABEL"
+					default="JFIELD_MOD_METATAGS_TWITTERMETA_ACCCREAT_DEFAULT"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCCREAT_DESC" />
+				<field 
+					type="text"
+					name="websitetwitter"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCSITE_LABEL"
+					default=""
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCSITE_DESC" />
+				<field 
+					type="text"
+					name="developpertwitter"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCDEV_LABEL"
+					default=""
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCDEV_DESC" />
+				<field 
+					type="spacer"
+					hr="true" />
+				<field 
+					type="radio"
+					name="twitterwidgettheme"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_THEMEWID_LABEL"
+					default="light"
+					class="btn-group btn-group-yesno"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_THEMEWID_DESC">
+						<option value="light">JFIELD_MOD_METATAGS_TWITTERMETA_THEMEWID_DEFAULT</option>
+						<option value="dark">JFIELD_MOD_METATAGS_TWITTERMETA_THEMEWID_DARK</option>
+				</field>
+				<field 
+					type="color"
+					name="twitterwidgetthemelink"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_THEMEWIDURL_LABEL"
+					default="#0000ff"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_THEMEWIDURL_DESC" />
+				<field 
+					type="color"
+					name="twitterwidgetthemeborder"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_THEMEWIDBORDER_LABEL"
+					default="#ff00ff"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_THEMEWIDBORDER_DESC" />
+				<field 
+					type="radio"
+					name="witterautoload"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_AUTOLOAD_LABEL"
+					default="off"
+					class="btn-group btn-group-yesno"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_AUTOLOAD_DESC">
+						<option value="on">JYes</option>
+						<option value="off">JNo</option>
+				</field>
+				<field 
+					type="radio"
+					name="witterdnt"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_DNT_LABEL"
+					default="on"
+					class="btn-group btn-group-yesno"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_DNT_DESC">
+						<option value="on">JYes</option>
+						<option value="off">JNo</option>
+				</field>
+				<field 
+					type="radio"
+					name="wittercsp"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_CSP_LABEL"
+					default="on"
+					class="btn-group btn-group-yesno"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_CSP_DESC">
+						<option value="on">JYes</option>
+						<option value="off">JNo</option>
+				</field>
+
+			</fieldset>
+			<fieldset name="mod_meta-fbogp" label="Facebook/OGP.me">
+				<field 
+					type="media"
+					name="ogpgraph_img"
+					default="ogpgraph_img"
+					label="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_LABEL"
+					description="JFIELD_MOD_METATAGS_TWITTERMETA_ACCTWITTER_SELECTIMG_DESC" 
+					directory="" />
+				<field 
+					name="ogtype"
+					type="list"
+					default=""
+					label="JFIELD_MOD_METATAGS_OGTYPE_LABEL"
+					description="JFIELD_MOD_METATAGS_OGTYPE_DESC">
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="website">website</option>
+						<option value="profile">profile</option>
+						<option value="book">book</option>
+						<option value="article">article</option>
+						<option value="video-movie">video.movie</option>
+						<option value="video-episode">video.episode</option>
+						<option value="video-tv_show">video.tv_show</option>
+						<option value="video-other">video.other</option>
+						<option value="music-radio_station">music.radio_station</option>
+						<option value="music-playlist">music.playlist</option>
+						<option value="music-album">music.album</option>
+						<option value="music-song">music.song</option>
+				</field>
+				<field 
+					name="fbadmins"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_FBADMIN_LABEL"
+					description="JFIELD_MOD_METATAGS_FBADMIN_DESC" />
+				<field 
+					name="fbappid"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_FBAPP_LABEL"
+					description="JFIELD_MOD_METATAGS_FBAPP_DESC" />
+				<field 
+					name="fbprofils_id"
+					type="text"
+					default=""
+					label="MOD_METATAGS_FBPROFILSID_LABEL"
+					description="MOD_METATAGS_FBPROFILSID_DESC" />
+				<field 
+					name="myAccountGoogleplus"
+					type="text"
+					default=""
+					label="Google+ (ID)"
+					description="JFIELD_MOD_METATAGS_GOOGLEPLUSACCOUNT_DESC" />
+				<field 
+					name="APPID_webstoreGoogle"
+					type="text"
+					default=""
+					label="Google Chrome (APP_ID webstore)"
+					description="info https://developers.google.com/chrome/web-store/docs/inline_installation" />
+			</fieldset>			
+			<fieldset name="mod_meta-Shareaholic" label="Shareaholic">
+				<field 
+					name="shareaholicsite_idAPI"
+					type="text"
+					default=""
+					label="Shareaholic API/Site ID"
+					description="info http://shareaholic.com" />	
+				<field 
+					name="shareaholicsite-shareable_page"
+					type="radio"
+					default=""
+					class="btn-group btn-group-yesno"
+					label="Shareaholic shareable page"
+					description="info http://shareaholic.com">
+						<option value="">JFIELD_MOD_METATAGS_SHAREAHOLICSITE_OPTION_DISABLED</option>
+						<option value="true">JFIELD_MOD_METATAGS_SHAREAHOLICSITE_OPTION_ENABLED</option>
+				</field>			
+				<field 
+					name="shareaholicsite-analytics"
+					type="radio"
+					default=""
+					class="btn-group btn-group-yesno"
+					label="Shareaholic analytics"
+					description="info http://shareaholic.com">
+						<option value="">JFIELD_MOD_METATAGS_SHAREAHOLICSITE_OPTION_ENABLED</option>
+						<option value="disabled">JFIELD_MOD_METATAGS_SHAREAHOLICSITE_OPTION_DISABLED</option>
+				</field>	
+			</fieldset>		
+			<fieldset name="mod_meta-copypast" label="Tynt">
+				<field 
+					name="Tynpush"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_TYNT_LABEL"
+					description="JFIELD_MOD_METATAGS_TYNT_DESC" />	
+			</fieldset>
+			<fieldset name="mod_meta-backlinks" label="Backlinks">
+				<field name="backlinks-frontendh" type="textarea" default="" label="Enter some html (HEAD)" description="" rows="10" cols="5" filter="raw"/>
+				<field name="backlinks-frontendf" type="textarea" default="" label="Enter some html (BODY)" description="" rows="10" cols="5" filter="raw"/>
+				
+				<field 
+					name="hitparad-id-site"
+					type="text"
+					default=""
+					label="HitParade (Site=)"
+					description="" />	
+				<field 
+					name="viglink_idsite"
+					type="text"
+					default=""
+					label="viglink ID"
+					description="" />	
+				<field 
+					name="nospartenaires_backlink"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="NoPartenaires.com"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>		
+				<field 
+					name="plazoo_backlink"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="plazoo.com"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>
+				<field 
+					name="oobdoo_backlink"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="oobdoo.com"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>
+				<field 
+					name="quantcast_backlink"
+					type="text"
+					default=""
+					label="quantcast.com ID"
+					description="" />
+				<field 
+					name="AddShoppers_backlink"
+					type="text"
+					default=""
+					label="AddShoppers ID"
+					description="" />
+				<field 
+					name="thumbshots_backlink"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="thumbshots.com"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>
+				<field 
+					name="activesearchresults_backlink"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="activesearchresults.com"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>
+				<field 
+					name="Pingback_url"
+					type="text"
+					default=""
+					label="PingBack URL"
+					description="" />	
+				<field 
+					name="hebdotop_idsite"
+					type="text"
+					default=""
+					label="Hebdotop ID"
+					description="" />	
+				<field 
+					name="pagerank_url"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="pagerank.fr"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>
+				<field 
+					name="freewebsubmission_backlink"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="freewebsubmission.com"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>
+				<field 
+					name="addme_backlink"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="addme.com"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>
+				<field 
+					name="sonicrun_backlink"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="sonicrun.com"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>
+				<field 
+					name="addpro_backlink"
+					type="radio"
+					default="0"
+					class="btn-group btn-group-yesno"
+					label="addpro.com"
+					description="">
+						<option value="0">hide</option>
+						<option value="1">show</option>
+				</field>
+				<field 
+					name="ineedhits_idsite"
+					type="text"
+					default=""
+					label="ineedhits.com ID"
+					description="" />	
+				<field 
+					name="hypersmash_idsite"
+					type="text"
+					default=""
+					label="hypersmash.com ID"
+					description="" />						
+			</fieldset>
+			<fieldset name="mod_meta-contactbusiness" label="Contact Business or individual">
+				<field 
+				name="author-userid-website" 
+				type="text"
+				label="Author"
+				default="" />
+				<field 
+					name="Co-B_Name"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_FULLNAME_LABEL"
+					description="JFIELD_MOD_METATAGS_FULLNAME_DESC" />
+				<field 
+					name="Co-B_Organization"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_ORGANISATION_LABEL"
+					description="JFIELD_MOD_METATAGS_ORGANISATION_DESC" />
+				<field 
+					name="Co-B_StreetAddress"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_STREETADDRESS_LABEL"
+					description="JFIELD_MOD_METATAGS_STREETADDRESS_DESC" />
+				<field 
+					name="Co-B_Zipcode"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_ZIPCODE_LABEL"
+					description="JFIELD_MOD_METATAGS_ZIPCODE_DESC" />
+				<field 
+					name="Co-B_City"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_CITY_LABEL"
+					description="JFIELD_MOD_METATAGS_CITY_DESC" />
+				<field 
+					name="Co-B_Country"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_CONTRY_LABEL"
+					description="JFIELD_MOD_METATAGS_CONTRY_DESC" />
+				<field 
+					name="Co-B_PhoneNumber"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_PHONENUMBER_LABEL"
+					description="JFIELD_MOD_METATAGS_PHONENUMBER_DESC" />
+				<field 
+					name="Co-B_FaxNumber"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_FAXNUMBER_LABEL"
+					description="JFIELD_MOD_METATAGS_FAXNUMBER_DESC" />
+				<field 
+					name="Co-B_NetworkAddress"
+					type="email"
+					validate="email"
+					default=""
+					label="JFIELD_MOD_METATAGS_EMAIL_LABEL"
+					description="JFIELD_MOD_METATAGS_EMAIL_DESC" />	
+			</fieldset>
+			<fieldset name="mod_meta-translate" label="Translator">	
+				<field 
+					name="googletranslatecustomization"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_GGTRANSLATORCUSTOM_LABEL"
+					description="JFIELD_MOD_METATAGS_GGTRANSLATORCUSTOM_DESC" />				
+			</fieldset>
+			<fieldset name="mod_meta-json-ld" label="JSON-LD ">	
+				<field 
+					name="json-ld-TYPE"
+					type="list"
+					default="json-ld-person"
+					label="JFIELD_MOD_METATAGS_OGTYPE_LABEL"
+					description="JFIELD_MOD_METATAGS_OGTYPE_DESC">
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="json-ld-person">Schema.org -¨Person</option>
+						<option value="json-ld-organisation">Schema.org -¨Organisation</option>
+						<option value="json-ld-custom">Custom</option>
+				</field>
+				<field type="spacer" name="schema_person" label="schema.org | Person" />
+				<field 
+					name="JsonLD-person-honorificPrefix"
+					type="list"
+					default=""
+					label="honorific Prefix"
+					description="">
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="Dr">Doctor</option>
+						<option value="Mr">Male</option>
+						<option value="Mrs">Female</option>
+				</field>
+				<field 
+					name="JsonLD-person-name"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_JSONLD_PERSONNAME_LABEL"
+					description="" />
+				<field 
+					name="JsonLD-person-birthDate" 
+					type="calendar" 
+					default="2000-04-01" 
+					label="JFIELD_MOD_METATAGS_JSONLD_PERSONBIRTDATE_LABEL" 
+					description="" 
+					format="%Y-%m-%d" />
+				<field 
+					name="JsonLD-person-mediaimage"
+					type="media"
+					default="" 
+					directory=""
+					label="IMAGE"
+					description="" />
+				<field 
+					name="JsonLD-person-faxNumber"
+					type="text"
+					default=""
+					label="fax"
+					description="" />
+				<field 
+					name="JsonLD-person-telephone"
+					type="text"
+					default=""
+					label="tel"
+					description="" />
+				<field 
+					name="JsonLD-person-gender"
+					type="radio"
+					default="female"
+					class="btn-group btn-group-yesno"
+					label="JFIELD_MOD_METATAGS_JSONLD_PERSONGENDER_LABEL"
+					description="">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+				</field>
+				<field 
+					type="spacer" 
+					name="schema_orga" 
+					label="schema.org | Organisation" />
+				<field 
+					name="JsonLD-organisation-legalName"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_JSONLD_ORGANISATIONLEGALNAME_LABEL"
+					description="" />
+				<field 
+					name="JsonLD-organisation-founder"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_JSONLD_ORGANISATIONFOUNDER_LABEL"
+					description="" />
+				<field 
+					name="JsonLD-organisation-foundingDate" 
+					type="calendar" 
+					default="2000-04-01" 
+					label="JFIELD_MOD_METATAGS_JSONLD_ORGANISATIONFOUNDERDATE_LABEL" 
+					description="" 
+					format="%Y-%m-%d" />
+				<field 
+					name="JsonLD-organisation-medialogo"
+					type="media"
+					default="" 
+					directory=""
+					label="lOGO IMAGE"
+					description="" />
+				<field 
+					name="JsonLD-organisation-fax"
+					type="text"
+					default=""
+					label="FAX"
+					description="" />
+				<field 
+					name="JsonLD-organisation-taxID"
+					type="text"
+					default=""
+					label="TAX ID"
+					description="" />
+				<field 
+					name="JsonLD-organisation-vatID"
+					type="text"
+					default=""
+					label="VAT ID"
+					description="" />
+				<field 
+					name="JsonLD-organisation-telephone"
+					type="text"
+					default=""
+					label="TEL"
+					description="" />
+				<field 
+					name="JsonLD-organisation-minValue"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_JSONLD_ORGANISATIONMINVALUE_LABEL"
+					description="" />
+				<field 
+					name="JsonLD-organisation-maxValue"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_JSONLD_ORGANISATIONMAXVALUE_LABEL"
+					description="" />
+				<field 
+					type="spacer" 
+					name="schema_custom" 
+					label="schema.org | Customiser" />
+				<field 
+					name="json-ld-custom" 
+					type="textarea" 
+					default="" 
+					label="Enter Code Json-LD" 
+					description="" 
+					rows="10" cols="5" 
+					filter="raw" />
+				<field 
+					type="spacer" 
+					name="schemaoption_custom" 
+					label="schema.org | Option" />
+				<field 
+					name="jsonjd-search"
+					type="text"
+					default=""
+					label="Recherche interne/intern Search"
+					description="URL custom here without 'q' and search terme, eg: https://www.site.tld/search.html" />
+			</fieldset>
+			<fieldset name="mod_meta-mobile" label="Smartphone/Mobile">
+				<field 
+					name="mobile-icons-startup" 
+					type="media" 
+					default="" 
+					label="JFIELD_MOD_METATAGS_MOBILEIMG_STARTUP_LABEL" 
+					description="" 
+					directory="" />
+				<field 
+					name="mobile-icons-logo" 
+					type="media" 
+					default="" 
+					label="JFIELD_MOD_METATAGS_MOBILEIMG_ICONS_LABEL" 
+					description="" 
+					directory="" />
+				<field 
+					name="mobile-icons-logo72x72" 
+					type="media" 
+					default="" 
+					label="Images logo (72x72)" 
+					description="" 
+					directory="" />
+				<field 
+					name="mobile-icons-logo114x114" 
+					type="media" 
+					default="" 
+					label="Images logo (114x114)" 
+					description="" 
+					directory="" />
+				<field 
+					name="doYouHave_AffilateApple"
+					type="text"
+					default=""
+					label="Affiliation (Apple)"
+					description="" />
+				<field 
+					name="myAffiliateDataapps-APPLE"
+					type="text"
+					default=""
+					label="Affiliation DATAapps (Apple)"
+					description="" />	
+				<field 
+					name="show_mobile"
+					type="list"
+					default=""
+					label="Output show (Mobile Web)"
+					description="">	
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="1">Show</option>
+				</field>
+			</fieldset>
+			<fieldset name="mod_meta-analystic" label="Analystic">				
+				<field 
+					name="analyse-domainname"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_DOMAINESNAME_LABEL"
+					description="JFIELD_MOD_METATAGS_DOMAINESNAME_DESC" />	
+				<field 
+					name="analyse-UA"
+					type="text"
+					default=""
+					label="Analystic UA"
+					description="JFIELD_MOD_METATAGS_DOMAINESNAME_DESC" />	
+				<field 
+					name="optimizelyKEYjs"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_OPTIMIZELYJS_LABEL"
+					description="JFIELD_MOD_METATAGS_OPTIMIZELYJS_DESC" />	
+				<field 
+					name="visualwebsiteoptimizers-idaccount"
+					type="text"
+					default=""
+					label="JFIELD_MOD_METATAGS_VISUALWEBSITEOPTIMIZERS_ACCOUNTID_LABEL"
+					description="JFIELD_MOD_METATAGS_VISUALWEBSITEOPTIMIZERS_ACCOUNTID_DESC" />	
+				<field 
+					name="xiti-s"
+					type="text"
+					default=""
+					label="s= (XITI)"
+					description="" />	
+				
+				<field 
+					name="show_piwik"
+					type="list"
+					default=""
+					label="Piwik"
+					description="">	
+						<option value="">JFIELD_MOD_METATAGS_CLASSIFICATION_OPTION_0</option>
+						<option value="1">JavaScript tracker</option>
+						<option value="2">images tracker</option>
+				</field>
+				<field 
+					name="url-piwik"
+					type="text"
+					default=""
+					label="Url Piwik"
+					description="exemple: www.alexonbalangue.me/analytics/" />	
+				<field 
+					name="site-id-piwik"
+					type="text"
+					default=""
+					label="Site ID Piwik"
+					description="ID site N: 2" />	
+				<field 
+					name="setCookieDomain-piwik"
+					type="text"
+					default=""
+					label="SetCookieDomain PIWIK"
+					description="exemple: *.alexonbalangue.me" />	
+			</fieldset>
+			<fieldset name="mod_meta-pinnedwindows8" label="Pinned (Windows 8)">
+				<field 
+					name="pinned8-color" 
+					type="color" 
+					default="#000000" 
+					label="Color" 
+					description="" />
+				<field 
+					name="pinned8-navbutton-color" 
+					type="color" 
+					default="#ff0000" 
+					label="Color (Navbutton)" 
+					description="" />
+				<field 
+					name="pinned8-square70x70logo" 
+					type="media" 
+					default="" 
+					label="IMAGE 70x70" 
+					description="" 
+					directory="" />
+				<field 
+					name="pinned8-square150x150logo" 
+					type="media" 
+					default="" 
+					label="IMAGE 150x150" 
+					description="" 
+					directory="" />
+				<field 
+					name="pinned8-square144x144logo" 
+					type="media" 
+					default="" 
+					label="IMAGE 144x144" 
+					description="" 
+					directory="" />
+				<field 
+					name="pinned8-wide310x150logo" 
+					type="media" 
+					default="" 
+					label="IMAGE 310x150" 
+					description="" 
+					directory="" />
+				<field 
+					name="pinned8-square310x310logo" 
+					type="media" 
+					default="" 
+					label="IMAGE 310x310" 
+					description="" 
+					directory="" />
+				<field 
+					name="pinned8-linksrss" 
+					type="url" 
+					default="" 
+					label="Flux RSS URL" 
+					description="" />
+				<field 
+					name="pinned8_badgebrowser" 
+					type="url" 
+					default="" 
+					label="Badge (XML)" 
+					description="" />
+				<field 
+					name="pinned8_IEconfig" 
+					type="url" 
+					default="" 
+					label="IEConfig (XML)" 
+					description="" />
+			</fieldset>
+			<fieldset name="mod_meta-pinnedwindows7task" label="Pinned Jump Task (Windows 7)">
+				<field 
+					name="pinned7-icons" 
+					type="media" 
+					default="" 
+					label="IMAGE ico" 
+					description="" 
+					directory="" />
+				<field 
+					type="spacer" 
+					hr="true" />
+					
+				<field 
+					name="pinned7-ltaskNames-1" 
+					type="url" 
+					default="" 
+					label="Name page 1" 
+					description="" />
+				<field 
+					name="pinned7-ltaskPages-1" 
+					type="url" 
+					default="" 
+					label="Links page 1" 
+					description="" />
+					
+				<field 
+					name="pinned7-ltaskNames-2" 
+					type="url" 
+					default="" 
+					label="Name page 2" 
+					description="" />
+				<field 
+					name="pinned7-ltaskPages-2" 
+					type="url" 
+					default="" 
+					label="Links page 2" 
+					description="" />
+					
+				<field 
+					name="pinned7-ltaskNames-3" 
+					type="url" 
+					default="" 
+					label="Name page 3" 
+					description="" />
+				<field 
+					name="pinned7-ltaskPages-3" 
+					type="url" 
+					default="" 
+					label="Links page 3" 
+					description="" />
+					
+				<field 
+					name="pinned7-ltaskNames-4" 
+					type="url" 
+					default="" 
+					label="Name page 4" 
+					description="" />
+				<field 
+					name="pinned7-ltaskPages-4" 
+					type="url" 
+					default="" 
+					label="Links page 4" 
+					description="" />
+					
+				<field 
+					name="pinned7-ltaskNames-5" 
+					type="url" 
+					default="" 
+					label="Name page 5" 
+					description="" />
+				<field 
+					name="pinned7-ltaskPages-5" 
+					type="url" 
+					default="" 
+					label="Links page 5" 
+					description="" />
+					
+				<field 
+					name="pinned7-ltaskNames-6" 
+					type="url" 
+					default="" 
+					label="Name page 6" 
+					description="" />
+				<field 
+					name="pinned7-ltaskPages-6" 
+					type="url" 
+					default="" 
+					label="Links page 6" 
+					description="" />
+					
+				<field 
+					name="pinned7-ltaskNames-7" 
+					type="url" 
+					default="" 
+					label="Name page 7" 
+					description="" />
+				<field 
+					name="pinned7-ltaskPages-7" 
+					type="url" 
+					default="" 
+					label="Links page 7" 
+					description="" />
+					
+				<field 
+					name="pinned7-ltaskNames-8" 
+					type="url" 
+					default="" 
+					label="Name page 8" 
+					description="" />
+				<field 
+					name="pinned7-ltaskPages-8" 
+					type="url" 
+					default="" 
+					label="Links page 8" 
+					description="" />
+					
+				<field 
+					name="pinned7-ltaskNames-9" 
+					type="url" 
+					default="" 
+					label="Name page 9" 
+					description="" />
+				<field 
+					name="pinned7-ltaskPages-9" 
+					type="url" 
+					default="" 
+					label="Links page 9" 
+					description="" />
+					
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="collection" priority="1" name="Accredited by Alexon Balangue">https://jupdates.alexonbalangue.me/index.php?option=com_ars&amp;view=update&amp;task=all&amp;format=xml</server>
+		<server type="extension" priority="2" name="Module - METATAGS">http://jupdates.alexonbalangue.me/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=1</server>
+	</updateservers>
+</extension>

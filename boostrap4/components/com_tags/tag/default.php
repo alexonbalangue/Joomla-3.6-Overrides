@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 $isSingleTag = (count($this->item) == 1);
 ?>
-<div class="tag-category<?php echo $this->pageclass_sfx; ?>">
+<div class="<?php echo $this->pageclass_sfx; ?>">
 	<?php if ($this->params->get('show_page_heading')) : ?>
 		<h1>
 			<?php echo $this->escape($this->params->get('page_heading')); ?>
@@ -34,7 +34,7 @@ $isSingleTag = (count($this->item) == 1);
 			<?php if ($this->params->get('tag_list_show_tag_description') == 1 && $this->item[0]->description) : ?>
 				<?php echo JHtml::_('content.prepare', $this->item[0]->description, '', 'com_tags.tag'); ?>
 			<?php endif; ?>
-			<div class="clr"></div>
+			<div class="clearfix"></div>
 		</div>
 	<?php endif; ?>
 	<?php // If there are multiple tags and a description or image has been supplied use that. ?>
@@ -50,11 +50,10 @@ $isSingleTag = (count($this->item) == 1);
 
 	<?php echo $this->loadTemplate('items'); ?>
 	<?php if (($this->params->def('show_pagination', 1) == 1 || ($this->params->get('show_pagination') == 2)) && ($this->pagination->get('pages.total') > 1)) : ?>
-		<div class="pagination">
+	
 			<?php if ($this->params->def('show_pagination_results', 1)) : ?>
-				<p class="counter pull-right"> <?php echo $this->pagination->getPagesCounter(); ?> </p>
+				<p class="pull-right"> <?php echo $this->pagination->getPagesCounter(); ?> </p>
 			<?php endif; ?>
 			<?php echo $this->pagination->getPagesLinks(); ?>
-		</div>
 	<?php endif; ?>
 </div>

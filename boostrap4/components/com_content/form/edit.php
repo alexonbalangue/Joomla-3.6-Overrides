@@ -37,7 +37,7 @@ JFactory::getDocument()->addScriptDeclaration("
 	}
 ");
 ?>
-<div class="edit item-page<?php echo $this->pageclass_sfx; ?>">
+<div class="<?php echo $this->pageclass_sfx; ?>">
 	<?php if ($params->get('show_page_heading')) : ?>
 	<div class="page-header">
 		<h1>
@@ -50,12 +50,12 @@ JFactory::getDocument()->addScriptDeclaration("
 		<div class="btn-toolbar">
 			<div class="btn-group">
 				<button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('article.save')">
-					<span class="icon-ok"></span><?php echo JText::_('JSAVE') ?>
+					<i class="fa check-square-o"></i> <?php echo JText::_('JSAVE') ?>
 				</button>
 			</div>
 			<div class="btn-group">
-				<button type="button" class="btn" onclick="Joomla.submitbutton('article.cancel')">
-					<span class="icon-cancel"></span><?php echo JText::_('JCANCEL') ?>
+				<button type="button" class="btn btn-danger" onclick="Joomla.submitbutton('article.cancel')">
+					<i class="fa fa-ban"></i> <?php echo JText::_('JCANCEL') ?>
 				</button>
 			</div>
 			<?php if ($params->get('save_history', 0) && $this->item->id) : ?>
@@ -64,9 +64,8 @@ JFactory::getDocument()->addScriptDeclaration("
 			</div>
 			<?php endif; ?>
 		</div>
-		<fieldset>
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#editor" data-toggle="tab"><?php echo JText::_('COM_CONTENT_ARTICLE_CONTENT') ?></a></li>
+				<li><a href="#editor" data-toggle="tab"><?php echo JText::_('COM_CONTENT_ARTICLE_CONTENT') ?></a></li>
 				<?php if ($params->get('show_urls_images_frontend') ) : ?>
 				<li><a href="#images" data-toggle="tab"><?php echo JText::_('COM_CONTENT_IMAGES_AND_URLS') ?></a></li>
 				<?php endif; ?>
@@ -79,7 +78,7 @@ JFactory::getDocument()->addScriptDeclaration("
 			</ul>
 
 			<div class="tab-content">
-				<div class="tab-pane active" id="editor">
+				<div class="tab-pane" id="editor">
 					<?php echo $this->form->renderField('title'); ?>
 
 					<?php if (is_null($this->item->id)) : ?>
@@ -100,24 +99,18 @@ JFactory::getDocument()->addScriptDeclaration("
 					<?php echo $this->form->renderField('float_fulltext', 'images'); ?>
 					<?php echo $this->form->renderField('urla', 'urls'); ?>
 					<?php echo $this->form->renderField('urlatext', 'urls'); ?>
-					<div class="control-group">
-						<div class="controls">
+					<div class="btn-group">
 							<?php echo $this->form->getInput('targeta', 'urls'); ?>
-						</div>
 					</div>
 					<?php echo $this->form->renderField('urlb', 'urls'); ?>
 					<?php echo $this->form->renderField('urlbtext', 'urls'); ?>
-					<div class="control-group">
-						<div class="controls">
+					<div class="btn-group">
 							<?php echo $this->form->getInput('targetb', 'urls'); ?>
-						</div>
 					</div>
 					<?php echo $this->form->renderField('urlc', 'urls'); ?>
 					<?php echo $this->form->renderField('urlctext', 'urls'); ?>
-					<div class="control-group">
-						<div class="controls">
+					<div class="btn-group">
 							<?php echo $this->form->getInput('targetc', 'urls'); ?>
-						</div>
 					</div>
 				</div>
 				<?php endif; ?>
@@ -143,12 +136,8 @@ JFactory::getDocument()->addScriptDeclaration("
 					<?php endif; ?>
 					<?php echo $this->form->renderField('access'); ?>
 					<?php if (is_null($this->item->id)):?>
-						<div class="control-group">
-							<div class="control-label">
-							</div>
-							<div class="controls">
+						<div class="btn-group">
 								<?php echo JText::_('COM_CONTENT_ORDERING'); ?>
-							</div>
 						</div>
 					<?php endif; ?>
 				</div>
@@ -164,6 +153,5 @@ JFactory::getDocument()->addScriptDeclaration("
 				</div>
 			</div>
 			<?php echo JHtml::_('form.token'); ?>
-		</fieldset>
 	</form>
 </div>

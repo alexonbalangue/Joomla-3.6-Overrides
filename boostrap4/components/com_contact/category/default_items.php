@@ -29,7 +29,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 		<?php endif; ?>
 
 		<?php if ($this->params->get('show_pagination_limit')) : ?>
-			<div class="btn-group pull-right">
+			<div class="btn-group float-right">
 				<label for="limit" class="element-invisible">
 					<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>
 				</label>
@@ -108,7 +108,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 		</ul>
 
 		<?php if ($this->params->get('show_pagination', 2)) : ?>
-		<div class="pagination">
+		<div class="bg-info clearfix">
 			<?php if ($this->params->def('show_pagination_results', 1)) : ?>
 			<p class="counter">
 				<?php echo $this->pagination->getPagesCounter(); ?>

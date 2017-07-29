@@ -13,7 +13,7 @@ $cparams = JComponentHelper::getParams('com_media');
 
 jimport('joomla.html.html.bootstrap');
 ?>
-<div class="contact<?php echo $this->pageclass_sfx?>" itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person">
 	<?php if ($this->params->get('show_page_heading')) : ?>
 		<h1>
 			<?php echo $this->escape($this->params->get('page_heading')); ?>
@@ -21,19 +21,17 @@ jimport('joomla.html.html.bootstrap');
 	<?php endif; ?>
 
 	<?php if ($this->contact->name && $this->params->get('show_name')) : ?>
-		<div class="page-header">
 			<h2>
 				<?php if ($this->item->published == 0) : ?>
 					<span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
 				<?php endif; ?>
-				<span class="contact-name" itemprop="name"><?php echo $this->contact->name; ?></span>
+				<span itemprop="name"><?php echo $this->contact->name; ?></span>
 			</h2>
-		</div>
 	<?php endif; ?>
 
 	<?php if ($this->params->get('show_contact_category') == 'show_no_link') : ?>
 		<h3>
-			<span class="contact-category"><?php echo $this->contact->category_title; ?></span>
+			<span><?php echo $this->contact->category_title; ?></span>
 		</h3>
 	<?php endif; ?>
 
@@ -83,7 +81,7 @@ jimport('joomla.html.html.bootstrap');
 	<?php endif; ?>
 
 	<?php if ($this->contact->image && $this->params->get('show_image')) : ?>
-		<div class="thumbnail pull-right">
+		<div class="thumbnail float-right">
 			<?php echo JHtml::_('image', $this->contact->image, JText::_('COM_CONTACT_IMAGE_DETAILS'), array('align' => 'middle', 'itemprop' => 'image')); ?>
 		</div>
 	<?php endif; ?>

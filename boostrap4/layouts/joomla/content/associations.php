@@ -12,7 +12,7 @@ defined('JPATH_BASE') or die;
 $items = $displayData;
 
 if (!empty($items)) : ?>
-	<ul class="item-associations">
+	<ul>
 		<?php foreach ($items as $id => $item) : ?>
 				<li>
 					<?php echo $item->link; ?>

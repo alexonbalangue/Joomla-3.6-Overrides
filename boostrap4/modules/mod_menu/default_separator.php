@@ -1,28 +1,27 @@
 <?php
 /**
- * @package     Joomla.Site
- * @subpackage  mod_menu
- *
- * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+; * @package     Joomla.frontend.Site
+; * @subpackage  Templates.cvstart
+; *
+; * @copyright   Copyright (C) 2012 - 2014. All rights reserved.
+; * @author   StartBoostrap, Boostrap, FontAwesome, Converter by Alexon Balangue
+; * @license     Free licences
  */
 
 defined('_JEXEC') or die;
 
-$title      = $item->anchor_title ? ' title="' . $item->anchor_title . '"' : '';
-$anchor_css = $item->anchor_css ? $item->anchor_css : '';
-
-$linktype   = $item->title;
-
+// Note. It is important to remove spaces between elements.
+$title = $item->anchor_title ? ' title="' . $item->anchor_title . '" ' : '';
 if ($item->menu_image)
-{
-	$linktype = JHtml::_('image', $item->menu_image, $item->title);
-
-	if ($item->params->get('menu_text', 1))
 	{
-		$linktype .= '<span class="image-title">' . $item->title . '</span>';
-	}
+		$item->params->get('menu_text', 1) ?
+		$linktype = '<img src="' . $item->menu_image . '" alt="' . $item->title . '" /><span class="image-title">' . $item->title . '</span> ' :
+		$linktype = '<img src="' . $item->menu_image . '" alt="' . $item->title . '" />';
+}
+else
+{
+	$linktype = $item->title;
 }
 
 ?>
-<span class="separator <?php echo $anchor_css; ?>"<?php echo $title; ?>><?php echo $linktype; ?></span>
+	<?php echo $linktype; ?>

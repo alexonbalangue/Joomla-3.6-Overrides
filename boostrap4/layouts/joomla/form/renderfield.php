@@ -21,7 +21,7 @@ extract($displayData);
 
 if (!empty($options['showonEnabled']))
 {
-	JHtml::_('jquery.framework');
+	//JHtml::_('jquery.framework');
 	JHtml::_('script', 'jui/cms.js', false, true);
 }
 
@@ -30,7 +30,7 @@ $rel   = empty($options['rel']) ? '' : ' ' . $options['rel'];
 ?>
 <div class="control-group<?php echo $class; ?>"<?php echo $rel; ?>>
 	<?php if (empty($options['hiddenLabel'])) : ?>
-		<div class="control-label"><?php echo $label; ?></div>
+		<?php echo $label; ?>
 	<?php endif; ?>
-	<div class="controls"><?php echo $input; ?></div>
+	<?php echo $input; ?>
 </div>

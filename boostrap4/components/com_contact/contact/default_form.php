@@ -25,17 +25,15 @@ foreach (JPluginHelper::getPlugin('captcha') as $plugin)
 	}
 }
 ?>
-<div class="contact-form">
-	<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate form-horizontal well">
+	<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate form-inline">
 		<?php foreach ($this->form->getFieldsets() as $fieldset): ?>
 			<?php if ($fieldset->name === 'captcha' && !$captchaEnabled) : ?>
 				<?php continue; ?>
 			<?php endif; ?>
 			<?php $fields = $this->form->getFieldset($fieldset->name); ?>
 			<?php if (count($fields)) : ?>
-				<fieldset>
 					<?php if (isset($fieldset->label) && strlen($legend = trim(JText::_($fieldset->label)))) : ?>
-						<legend><?php echo $legend; ?></legend>
+						<label><?php echo $legend; ?></label>
 					<?php endif; ?>
 					<?php foreach ($fields as $field) : ?>
 						<?php if ($field->name === 'contact_email_copy' && !$this->params->get('show_email_copy')) : ?>
@@ -43,7 +41,6 @@ foreach (JPluginHelper::getPlugin('captcha') as $plugin)
 						<?php endif; ?>
 						<?php echo $field->renderField(); ?>
 					<?php endforeach; ?>
-				</fieldset>
 			<?php endif; ?>
 		<?php endforeach; ?>
 		<div class="control-group">
@@ -57,4 +54,3 @@ foreach (JPluginHelper::getPlugin('captcha') as $plugin)
 			</div>
 		</div>
 	</form>
-</div>

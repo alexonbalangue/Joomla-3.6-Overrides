@@ -25,18 +25,20 @@ else
 	$width = '';
 }
 ?>
-<div class="search<?php echo $moduleclass_sfx ?>">
+<div class="<?php echo $moduleclass_sfx ?>">
 	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline">
+	
+		<div class="input-group input-group-lg">
 		<?php
-			$output = '<label for="mod-search-searchword" class="element-invisible">' . $label . '</label> ';
-			$output .= '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox search-query" type="search"' . $width;
-			$output .= ' placeholder="' . $text . '" />';
+			$output = '<span class="input-group-addon"><i class="fa fa-search fa-2x"></i><label for="mod-search-searchword" class="sr-only">' . $label . '</label></span>';
+			$output .= '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="form-control" type="search"' . $width;
+			$output .= ' placeholder="' . $text . '">';
 
 			if ($button) :
-				if ($imagebutton) :
-					$btn_output = ' <input type="image" alt="' . $button_text . '" class="button" src="' . $img . '" onclick="this.form.searchword.focus();"/>';
+				if ($imagebutton) ://Not take the default config & not need because use font-awesome
+					$btn_output = '<span class="input-group-btn"><button class="btn btn-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button></span>';
 				else :
-					$btn_output = ' <button class="button btn btn-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
+					$btn_output = '<span class="input-group-btn"><button class="btn btn-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button></span>';
 				endif;
 
 				switch ($button_pos) :
@@ -61,6 +63,7 @@ else
 
 			echo $output;
 		?>
+		</div>
 		<input type="hidden" name="task" value="search" />
 		<input type="hidden" name="option" value="com_search" />
 		<input type="hidden" name="Itemid" value="<?php echo $mitemid; ?>" />

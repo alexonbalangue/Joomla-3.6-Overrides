@@ -1,35 +1,26 @@
 <?php
 /**
- * @package     Joomla.Site
- * @subpackage  mod_menu
- *
- * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+; * @package     Joomla.frontend.Site
+; * @subpackage  Templates.cvstart
+; *
+; * @copyright   Copyright (C) 2012 - 2014. All rights reserved.
+; * @author   StartBoostrap, Boostrap, FontAwesome, Converter by Alexon Balangue
+; * @license     Free licences
  */
 
 defined('_JEXEC') or die;
 
-$id = '';
-
-if (($tagId = $params->get('tag_id', '')))
-{
-	$id = ' id="' . $tagId . '"';
-}
-
-// The menu class is deprecated. Use nav instead
+// Note. It is important to remove spaces between elements.
 ?>
-<ul class="nav menu<?php echo $class_sfx; ?>"<?php echo $id; ?>>
-<?php foreach ($list as $i => &$item)
+<?php // The menu class is deprecated. Use nav instead. ?>
+<ul class="navbar-nav ml-auto">
+
+<?php
+foreach ($list as $i => &$item)
 {
 	$class = 'item-' . $item->id;
 
-	if ($item->id == $default_id)
-	{
-		$class .= ' default';
-	}
-
-
-	if (($item->id == $active_id) || ($item->type == 'alias' && $item->params->get('aliasoptions') == $active_id))
+	if (($item->id == $active_id) OR ($item->type == 'alias' AND $item->params->get('aliasoptions') == $active_id))
 	{
 		$class .= ' current';
 	}
@@ -67,13 +58,19 @@ if (($tagId = $params->get('tag_id', '')))
 		$class .= ' parent';
 	}
 
-	echo '<li class="' . $class . '">';
+	if (!empty($class))
+	{
+		$class = ' class="' . trim($class) . '"';
+	}
 
+	echo '<li class="nav-item">';
+
+	// Render the menu item.
 	switch ($item->type) :
 		case 'separator':
+		case 'url':
 		case 'component':
 		case 'heading':
-		case 'url':
 			require JModuleHelper::getLayoutPath('mod_menu', 'default_' . $item->type);
 			break;
 
@@ -85,17 +82,17 @@ if (($tagId = $params->get('tag_id', '')))
 	// The next item is deeper.
 	if ($item->deeper)
 	{
-		echo '<ul class="nav-child unstyled small">';
+		echo '<ul class="navbar-nav ml-auto">';
 	}
-	// The next item is shallower.
 	elseif ($item->shallower)
 	{
+		// The next item is shallower.
 		echo '</li>';
 		echo str_repeat('</ul></li>', $item->level_diff);
 	}
-	// The next item is on the same level.
 	else
 	{
+		// The next item is on the same level.
 		echo '</li>';
 	}
 }

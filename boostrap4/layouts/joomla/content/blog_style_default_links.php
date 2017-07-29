@@ -11,8 +11,8 @@ defined('JPATH_BASE') or die;
 ?>
 <ol class="nav nav-tabs nav-stacked">
 <?php foreach ($displayData->get('link_items') as $item) : ?>
-	<li>
-		<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>">
+	<li class="nav-item">
+		<a class="nav-link" href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>">
 			<?php echo $item->title; ?></a>
 	</li>
 <?php endforeach; ?>

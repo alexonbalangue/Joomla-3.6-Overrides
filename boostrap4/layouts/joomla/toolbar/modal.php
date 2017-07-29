@@ -22,11 +22,11 @@ JHtml::_('behavior.core');
  */
 
 $selector = $displayData['selector'];
-$class    = isset($displayData['class']) ? $displayData['class'] : 'btn btn-small';
+$class    = isset($displayData['class']) ? $displayData['class'] : 'btn btn-secondary btn-xs';
 $icon     = isset($displayData['icon']) ? $displayData['icon'] : 'out-3';
 $text     = isset($displayData['text']) ? $displayData['text'] : '';
 ?>
 <button class="<?php echo $class; ?>" data-toggle="modal" data-target="#<?php echo $selector; ?>">
-	<span class="icon-<?php echo $icon; ?>"></span>
+	<span class="fa fa-<?php echo $icon; ?>"></span>
 	<?php echo $text; ?>
 </button>

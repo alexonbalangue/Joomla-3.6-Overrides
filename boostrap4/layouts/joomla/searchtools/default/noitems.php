@@ -11,6 +11,6 @@ defined('JPATH_BASE') or die;
 
 $data = $displayData;
 ?>
-<div class="alert alert-info alert-no-items">
+<div class="alert alert-info">
 	<?php echo $data['options']['noResultsText']; ?>
 </div>

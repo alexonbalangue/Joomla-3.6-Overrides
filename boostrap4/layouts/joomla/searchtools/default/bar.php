@@ -30,27 +30,27 @@ $filters = $data['view']->filterForm->getGroup('filter');
 
 <?php if (!empty($filters['filter_search'])) : ?>
 	<?php if ($searchButton) : ?>
-		<label for="filter_search" class="element-invisible">
+		<label for="filter_search" class="sr-only">
 			<?php echo JText::_('JSEARCH_FILTER'); ?>
 		</label>
-		<div class="btn-wrapper input-append">
+		<div class="btn-group">
 			<?php echo $filters['filter_search']->input; ?>
 			<?php if ($filters['filter_search']->description) : ?>
 				<?php JHtmlBootstrap::tooltip('#filter_search', array('title' => JText::_($filters['filter_search']->description))); ?>
 			<?php endif; ?>
-			<button type="submit" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>">
-				<span class="icon-search"></span>
+			<button type="submit" class="btn btn-info hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>">
+				<i class="fa fa-search"></i>
 			</button>
 		</div>
 		<?php if ($filterButton) : ?>
-			<div class="btn-wrapper hidden-phone">
-				<button type="button" class="btn hasTooltip js-stools-btn-filter" title="<?php echo JHtml::tooltipText('JSEARCH_TOOLS_DESC'); ?>">
+			<div class="hidden-xs-up">
+				<button type="button" class="btn btn-secondary hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_TOOLS_DESC'); ?>">
 					<?php echo JText::_('JSEARCH_TOOLS');?> <span class="caret"></span>
 				</button>
 			</div>
 		<?php endif; ?>
-		<div class="btn-wrapper">
-			<button type="button" class="btn hasTooltip js-stools-btn-clear" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>">
+		<div>
+			<button type="button" class="btn btn-secondary hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>">
 				<?php echo JText::_('JSEARCH_FILTER_CLEAR');?>
 			</button>
 		</div>

@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.7" client="site" method="upgrade">
+	<name>Module - Open Source</name>
+	<author>Alexon Balangue</author>
+	<creationDate>31th, Mai 2017</creationDate>
+	<copyright>Copyright (C) 2012-2017 Alexon Balangue.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<authorEmail>moi.sites@alexonbalangue.me</authorEmail>
+	<authorUrl>www.alexonbalangue.me</authorUrl>
+	<version>2.2</version>
+	<description>MOD_OPENSOURCE_XML_DESC</description>
+	<media destination="mod_opensource" folder="media">
+		<filename>index.html</filename>
+		<folder>icofont</folder>
+		<folder>ivory</folder>
+		<folder>kickstart</folder>
+		<folder>rotatorjs</folder>
+		<folder>whhg</folder>
+		<folder>cookies</folder>
+		<folder>homescreen</folder>
+		<folder>amp</folder>	
+	</media>
+	<files>
+		<filename module="mod_opensource">mod_opensource.php</filename>
+		<filename>mod_opensource.xml</filename>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>		
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_opensource.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_opensource.ini</language>
+	</languages>
+	
+	<administration>
+		<languages>
+			<language tag="en-GB">language/en-GB/en-GB.mod_opensource.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.mod_opensource.sys.ini</language>
+		</languages>
+	</administration>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="html4or5"
+					 type="radio" 
+					default="1"
+					label="HTML"
+					description="JFIELD_MOD_OPENSOURCE_HTML">
+						<option value="0">HTML4/4.1</option>
+						<option value="1">HTML5</option>
+				</field>
+				<field 
+					name="protos"
+					 type="list" 
+					default="1"
+					label="Protocols CDN"
+					description="" >
+						<option value="1">//</option>
+						<option value="2">http://</option>
+						<option value="3">https://</option>
+				</field>
+				<field 
+					name="dnsprefetch_custom"
+					type="text" 
+					default=""
+					label="JFIELD_MOD_OPENSOURCE_CDNCUSTOM_LABEL"
+					description="JFIELD_MOD_OPENSOURCE_CDNCUSTOM_DESC"/>
+				<field 
+					type="spacer" 
+					label="JFIELD_MOD_OPENSOURCE_MOREINFORMATION"
+					description="Version" />				
+			</fieldset>
+			<fieldset name="plugin_lxw_site" label="Configuration">		
+				<field 
+					name="fontawesome-site"
+					 type="list" 
+					default="0"
+					label="fontawesome"
+					description="Version 4.7.0">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">MaxCDN minified</option>
+						<option value="2">CDN cloudflare minified</option>
+						<option value="3">CDN jsdelivr minified</option>
+				</field>
+				<field 
+					name="icofont-site"
+					 type="list" 
+					default="0"
+					label="Icofont"
+					description="Version 1.0.0-alpha by Sharpboostrap">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">base</option>
+						<option value="2">minified</option>
+				</field>
+				<field 
+					name="jquery-site"
+					 type="list" 
+					default="0"
+					label="Jquery"
+					description="Version 1.12.4/2.2.4/3.2.1">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">MaxCDN minified v1.x</option>
+						<option value="2">MaxCDN minified v2.x</option>
+						<option value="3">MaxCDN minified v3.x</option>
+						<option value="4">Google API minified v1.x</option>
+						<option value="5">Google API minified v2.x</option>
+						<option value="6">Google API minified v3.x</option>
+						<option value="7">Microsoft Ajax CDN minified v1.x</option>
+						<option value="8">Microsoft Ajax CDN minified v2.x</option>
+						<option value="9">Microsoft Ajax CDN minified v3.x</option>
+						<option value="10">Cloudflare CDN minified v1.x</option>
+						<option value="11">Cloudflare CDN minified v2.x</option>
+						<option value="12">Cloudflare CDN minified v3.x</option>
+						<option value="13">Jsdelivr CDN minified v1.x</option>
+						<option value="14">Jsdelivr CDN minified v2.x</option>
+						<option value="15">Jsdelivr CDN minified v3.x</option>
+				</field>
+				<field 
+					name="jqueryui-site"
+					 type="list" 
+					default="0"
+					label="Jquery UI"
+					description="Version 1.12.1">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">Google Api minified+themes</option>
+						<option value="2">MaxCDN minified+themes</option>
+						<option value="3">Cloudflare CDN minified</option>
+						<option value="4">jsdelivr CDN minified+themes</option>
+						<option value="5">Microsoft Ajax CDN minified+themes</option>
+				</field>
+				<field 
+					name="jqueryui-site-themes"
+					 type="list" 
+					default="smoothness"
+					label="Jquery UI (themes)"
+					description="Version 1.12.1">
+						<option value="smoothness">smoothness</option>
+						<option value="black-tie">black-tie</option>
+						<option value="blitzer">blitzer</option>
+						<option value="cupertino">cupertino</option>
+						<option value="dark-hive">dark-hive</option>	
+						<option value="dot-luv">dot-luv</option>
+						<option value="eggplant">eggplant</option>
+						<option value="excite-bike">excite-bike</option>
+						<option value="flick">flick</option>
+						<option value="hot-sneaks">hot-sneaks</option>
+						<option value="humanity">humanity</option>	
+						<option value="le-frog">le-frog</option>
+						<option value="mint-choc">mint-choc</option>
+						<option value="overcast">overcast</option>
+						<option value="pepper-grinder">pepper-grinder</option>
+						<option value="redmond">redmond</option>
+						<option value="south-street">south-street</option>	
+						<option value="start">start</option>
+						<option value="sunny">sunny</option>
+						<option value="swanky-purse">swanky-purse</option>
+						<option value="trontastic">trontastic</option>
+						<option value="ui-darkness">ui-darkness</option>
+						<option value="ui-lightness">ui-lightness</option>
+						<option value="vader">vader</option>
+				</field>
+				<field 
+					name="jquerymobile-site"
+					 type="list" 
+					default="0"
+					label="Jquery Mobile"
+					description="Version 1.4.5">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">MaxCDN minified</option>
+						<option value="2">Cloudflare CDN minified</option>
+						<option value="3">Google CDN minified</option>
+						<option value="4">Jsdelivr CDN minified</option>
+						<option value="5">Microsoft Ajax CDN minified</option>
+				</field>
+				<field 
+					name="qunit-site"
+					 type="radio" 
+					default="0"
+					label="Qunit"
+					description="Version 2.3.2">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">MaxCDN minified</option>
+						<option value="2">Cloudflare CDN minified</option>
+				</field>
+				<field 
+					name="sizzle-site"
+					 type="radio" 
+					default="0"
+					label="Sizzle"
+					description="Version 2.3.3">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">Cloudflare CDN minified</option>
+						<option value="2">Jsdelivr CDN minified</option>
+				</field>
+				<field 
+					name="mootools-site"
+					 type="radio" 
+					default="0"
+					label="Mootools"
+					description="Version 1.6">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">CDN google minified</option>
+						<option value="2">CDN CloudFlare minified</option>
+				</field>	
+				<field 
+					name="dojo-site"
+					 type="radio" 
+					default="0"
+					label="Dojo"
+					description="Version 1.12.2">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">Google API CDN minified</option>
+						<option value="2">CDN CloudFlare minified</option>
+						<option value="3">Jsdelivr CDN minified</option>
+				</field>
+				<field 
+					name="modernizr-site"
+					 type="radio" 
+					default="0"
+					label="Modernizr"
+					description="Version 2.8.3">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">Jsdelivr CDN minified</option>
+						<option value="2">Cloudflare CDN minified</option>
+				</field>
+				<field 
+					name="less-site"
+					 type="radio" 
+					default="0"
+					label="LESS"
+					description="Version 2.7.2">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">CDN CloudFlare minified</option>
+						<option value="2">Jsdelivr CDN minified</option>
+				</field>
+				<field 
+					name="skel-site"
+					type="radio" 
+					default="0"
+					label="Skel"
+					description="Version 3.0.1">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">minified CDN CloudFlare</option>
+						<option value="2">Jsdelivr CDN minified</option>
+				</field>	
+				<field 
+					name="ivory-site"
+					 type="radio" 
+					default="0"
+					label="Ivory"
+					description="Version 2.0">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">base</option>
+						<option value="2">minified</option>
+				</field>	
+				<field 
+					name="skeleton-site"
+					 type="radio" 
+					default="0"
+					label="skeleton"
+					description="Version 2.0.4">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">minified CDN CloudFlare</option>
+						<option value="2">Jsdelivr CDN base</option>
+				</field>
+				<field 
+					name="knacss-site"
+					 type="radio" 
+					default="0"
+					label="knacss"
+					description="Version 4.4.0">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">Jsdelivr CDN base</option>
+				</field>
+				<field 
+					name="fondationzurb-site"
+					 type="radio" 
+					default="0"
+					label="Foundation Zurb"
+					description="Version 6.3.1">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">minified CDN CloudFlare</option>
+						<option value="2">Jsdelivr CDN base</option>
+				</field>
+				<field 
+					name="htmlkickstart-site"
+					 type="radio" 
+					default="0"
+					label="HTML KickStart"
+					description="Version 0.94">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">base</option>
+						<option value="2">minified</option>
+				</field>
+				<field 
+					name="rotatorjs-site"
+					 type="radio" 
+					default="0"
+					label="Rotator.js"
+					description="Version 0.9.8 R05.21.12">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">base</option>
+						<option value="2">minified</option>
+				</field>
+				<field 
+					name="jqueryeasingjs-site"
+					 type="radio" 
+					default="0"
+					label="jquery.easing.js"
+					description="Version 1.4.1">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">CDN Cloudflare minifield</option>
+						<option value="2">CDN jsdelivr minifield</option>
+				</field>
+				<field 
+					name="whhg-site"
+					 type="radio" 
+					default="0"
+					label="whhg"
+					description="Version 31 May 2017 to 3:40AM (downloaded)">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">local base</option>
+						<option value="2">local minified</option>
+						<option value="3">Site WHHG</option>
+				</field>
+				<field 
+					name="angularjs-site"
+					 type="radio" 
+					default="0"
+					label="angularjs"
+					description="Version 1.6.4">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="3">CDN Google minifield</option>
+						<option value="4">CDN jsdelivr minifield</option>
+						<option value="5">CDN Cloudflare minifield</option>
+				</field>		
+				<field 
+					name="bootstrap-site"
+					 type="list" 
+					default="0"
+					label="Bootstrap"
+					description="Version">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">MaxCDN minified v3.3.7</option>
+						<option value="2">Microsoft CDN Ajax minified v3.3.7</option>
+						<option value="3">minified CDN CloudFlare v3.3.7</option>
+						<option value="4">minified CDN CloudFlare v4.0.0-alpha6</option>
+						<option value="5">CDN jsdelivr minifield v3.3.7</option>
+						<option value="6">CDN jsdelivr minifield v4.0.0-alpha6</option>
+				</field>	
+				<field 
+					name="MapBox-site"
+					 type="list" 
+					default="0"
+					label="Map"
+					description="Version">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">mapbox.com v0.37.0 GL (CDN minified) </option>
+						<option value="2">mapbox.com v3.1.1 (CDN minified) </option>
+						<option value="3">mapbox.com v3.0.1/GeoJson URL external (CDN minified) </option>
+				</field>
+				<field 
+					name="cookiesEU-site"
+					 type="list" 
+					default="0"
+					label="Cookies (E.U.)"
+					description="Jquery Cookie Version 1.4.1">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">minified (Expert CDN jsdelivr)</option>
+						<option value="2">minified (Expert CDN CloudFlare)</option>
+						<option value="3">minified (Novice CDN CloudFlare)</option>
+						<option value="4">minified (Novice CDN CloudFlare/CSS Own Custom)</option>
+						<option value="5">minified (Novice CDN jsdelivr)</option>
+						<option value="6">minified (Novice CDN jsdelivr/CSS Own Custom)</option>
+						<option value="7">minified (expert js/CSS Own Custom)</option>
+				</field>	
+				<field 
+					name="metroUI-site"
+					 type="list" 
+					default="0"
+					label="Metro UI "
+					description="Version 3.0.17">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">minified CloudFlare CDN</option>
+				</field>
+				<field 
+					name="weather-icons-site"
+					 type="list" 
+					default="0"
+					label="Weather icons"
+					description="Version 2.0.9">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">minified CloudFlare CDN (wind) </option>
+						<option value="2">minified CloudFlare CDN (icons)</option>
+				</field>
+				<field 
+					name="typicons-site"
+					 type="list" 
+					default="0"
+					label="Typicons"
+					description="Version 2.0.9">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">minified CloudFlare CDN </option>
+				</field>
+				<field 
+					name="foundation-icons-site"
+					 type="list" 
+					default="0"
+					label="foundation icons"
+					description="Version 3">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="3">minified CloudFlare CDN </option>
+						<option value="4">minified jsdelivr CDN </option>
+				</field>
+				<field 
+					name="useiconic-site"
+					 type="list" 
+					default="0"
+					label="iconic icons (Version Gratuite)"
+					description="Version try/essaie">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">base (bootstrap) </option>
+						<option value="2">minified (bootstrap) </option>
+						<option value="3">base (foundation) </option>
+						<option value="4">minified (foundation) </option>
+						<option value="5">base (glyphs) </option>
+						<option value="6">minified (glyphs)</option>
+						<option value="7">base (glyphs legacy)</option>
+						<option value="8">minified (glyphs legacy)</option>
+				</field>
+				<field 
+					name="AddToHomescreen-site"
+					 type="list" 
+					default="0"
+					label="ADD to Homescreen"
+					description="Version 3.2.3">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">base </option>
+						<option value="2">minified </option>
+				</field>
+			</fieldset>
+			<fieldset name="effect-styles" label="Effect/effet">
+				<field 
+					name="animate-site"
+					 type="list" 
+					default="0"
+					label="Animate.css"
+					description="Version 3.5.2">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">jsdelivr CDN minified</option>
+						<option value="2">CloudFlare CDN minified</option>
+				</field>
+				<field 
+					name="wowjs-site"
+					 type="list" 
+					default="0"
+					label="wow.js"
+					description="Version 1.1.2">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">jsdelivr CDN minified</option>
+						<option value="2">CloudFlare CDN minified</option>
+				</field>
+				<field 
+					name="fancyBox-site"
+					 type="list" 
+					default="0"
+					label="fancyBox"
+					description="Version 3.0.47">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="4">CloudFlare CDN minified</option>
+				</field>
+				<field 
+					name="countupjs-site"
+					 type="list" 
+					default="0"
+					label="CountUp"
+					description="Version 1.8.5">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">CloudFlare CDN minified Anguler</option>
+						<option value="2">CloudFlare CDN minified</option>
+						<option value="3">jsdelivr CDN minified</option>
+				</field>
+				<field 
+					name="waypointsjs-site"
+					 type="list" 
+					default="0"
+					label="waypoints"
+					description="Version 4.0.1">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="3">jsdelivr CDN minified (Jquery)</option>
+						<option value="4">CloudFlare CDN minified (Jquery)</option>
+				</field>
+				<field 
+					name="parallaxjs-site"
+					 type="list" 
+					default="0"
+					label="Parallax"
+					description="Version 2.1.3">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="9">jsdelivr CDN minified (Jquery)</option>
+						<option value="10">CloudFlare CDN minified (Jquery)</option>
+				</field>
+				<field 
+					name="smoothjs-site"
+					 type="list" 
+					default="0"
+					label="Smooth-Scroll"
+					description="Version 11.1.0">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">CloudFlare CDN minified</option>
+				</field>
+			
+			</fieldset>
+			<fieldset name="iesupport-pre" label="IE Support">	
+				<field 
+					name="ie-site"
+					 type="list" 
+					default=""
+					label="html5shiv/respond"
+					description="html5shiv Version 3.7.3 / respond.js version 1.4.2">
+						<option value="">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">MaxCDN minified (DEV)</option>
+						<option value="2">jsdelivr CDN minified (DEV)</option>
+						<option value="3">CloudFlare CDN minified (DEV)</option>
+						<option value="4">CloudFlare CDN minified (Prod)</option>
+				</field>
+			</fieldset>
+			<fieldset name="amphtml-pre" label="AMP-HTML">	
+				<field 
+					name="amp-start"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-HTML (start/responsive)"
+					description="require before add news">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-youtube"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-youtube"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-access"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-access"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-vine"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-vine"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-accordion"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-accordion"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-twitter"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-twitter"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-pinterest"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-pinterest"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-instagram"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-instagram"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-soundcloud"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-soundcloud"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-usernotification"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-user-notification"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-iframe"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-iframe"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-facebook"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-facebook"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-vimeo"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-vimeo"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-lightbox"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-lightbox"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-dailymotion"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-dailymotion"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-font"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-font"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-fittext"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-fit-text"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-list"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-list"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-installserviceworker"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-install-serviceworker"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-carousel"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-carousel"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-imagelightbox"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-image-lightbox"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-audio"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-audio"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-anim"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-anim"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-analytics"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-analytics"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-ad"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-ad"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-embed"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-embed"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-img"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-img"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-pixel"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-pixel"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-video"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-video"
+					description="">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+				<field 
+					name="amp-start"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="no"
+					label="AMP-HTML"
+					description="require before add news">
+						<option value="yes">JYes</option>
+						<option value="no">JNo</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced-pre" label="Prerender and prefetch support">
+				<field 
+					type="spacer" 
+					label="prerender"
+					description="Version" />
+				<field 
+					name="prerender-url"
+					type="text" 
+					default=""
+					label="URL"
+					description="Version" />
+				<field 
+					type="spacer" 
+					label="prefetch"
+					description="Version" />
+				<field 
+					name="prefetch-url"
+					type="media" 
+					default=""
+					label="Image/CSS"
+					description="JFIELD_MOD_OPENSOURCE_PREFETCH_DESC"
+					directory="" />
+				<field 
+					type="spacer" 
+					label="dns-prefetch"
+					description="Version" />	
+				<field 
+					name="dnsprefetch_yoursite"
+					type="radio" 
+					default="0"
+					label="JFIELD_MOD_OPENSOURCE_MYSITE"
+					description="Version">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">JFIELD_MOD_OPENSOURCE_SHOW</option>
+				</field>
+				<field 
+					name="dnsprefetch_googleapi"
+					type="radio" 
+					default="0"
+					label="Google Ajax API Labs"
+					description="Version">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">JFIELD_MOD_OPENSOURCE_SHOW</option>
+				</field>
+				<field 
+					name="dnsprefetch_bootstrapcdn"
+					type="radio" 
+					default="0"
+					label="BootStrap MaxCDN"
+					description="Version">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">JFIELD_MOD_OPENSOURCE_SHOW</option>
+				</field>
+				<field 
+					name="dnsprefetch_jquery"
+					type="radio" 
+					default="0"
+					label="JQuery"
+					description="Version">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">JFIELD_MOD_OPENSOURCE_SHOW</option>
+				</field>
+				<field 
+					name="dnsprefetch_cdnjscloudflare"
+					type="radio" 
+					default="0"
+					label="CloudFlare CDN JS"
+					description="Version">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">JFIELD_MOD_OPENSOURCE_SHOW</option>
+				</field>
+				<field 
+					name="dnsprefetch_aspnetcdn"
+					type="radio" 
+					default="0"
+					label="ASPNet CDN"
+					description="Version">
+						<option value="0">JFIELD_MOD_OPENSOURCE_HIDE</option>
+						<option value="1">JFIELD_MOD_OPENSOURCE_SHOW</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="collection" priority="1" name="Accredited by Alexon Balangue">https://jupdates.alexonbalangue.me/update/joomla/general.xml</server>
+		<server type="extension" priority="2" name="Module - Open Source">https://jupdates.alexonbalangue.me/update/joomla/xml/mod_opensource.xml</server>
+	</updateservers>
+</extension>

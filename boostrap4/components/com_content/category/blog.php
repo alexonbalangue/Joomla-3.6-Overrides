@@ -13,7 +13,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 JHtml::_('behavior.caption');
 ?>
-<div class="blog<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Blog">
+<div class="row<?php /*echo $this->pageclass_sfx;*/ ?>" itemscope itemtype="https://schema.org/Blog">
 	<?php if ($this->params->get('show_page_heading')) : ?>
 		<div class="page-header">
 			<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
@@ -23,7 +23,7 @@ JHtml::_('behavior.caption');
 	<?php if ($this->params->get('show_category_title', 1) or $this->params->get('page_subheading')) : ?>
 		<h2> <?php echo $this->escape($this->params->get('page_subheading')); ?>
 			<?php if ($this->params->get('show_category_title')) : ?>
-				<span class="subheading-category"><?php echo $this->category->title; ?></span>
+				<small><?php echo $this->category->title; ?></small>
 			<?php endif; ?>
 		</h2>
 	<?php endif; ?>
@@ -34,27 +34,31 @@ JHtml::_('behavior.caption');
 	<?php endif; ?>
 
 	<?php if ($this->params->get('show_description', 1) || $this->params->def('show_description_image', 1)) : ?>
-		<div class="category-desc clearfix">
+		<div class="media">
+		  <div class="media-left media-middle">
 			<?php if ($this->params->get('show_description_image') && $this->category->getParams()->get('image')) : ?>
-				<img src="<?php echo $this->category->getParams()->get('image'); ?>" alt="<?php echo htmlspecialchars($this->category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'); ?>"/>
+				<img src="<?php echo $this->category->getParams()->get('image'); ?>" width="90" height="90" alt="<?php echo htmlspecialchars($this->category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'); ?>" class="media-object">
 			<?php endif; ?>
+		  </div>
+		  <div class="media-body">
 			<?php if ($this->params->get('show_description') && $this->category->description) : ?>
 				<?php echo JHtml::_('content.prepare', $this->category->description, '', 'com_content.category'); ?>
 			<?php endif; ?>
+		  </div>
 		</div>
 	<?php endif; ?>
 
 	<?php if (empty($this->lead_items) && empty($this->link_items) && empty($this->intro_items)) : ?>
 		<?php if ($this->params->get('show_no_articles', 1)) : ?>
-			<p><?php echo JText::_('COM_CONTENT_NO_ARTICLES'); ?></p>
+			<p class="alert alert-warning"><i class="fa fa-warning fa-2x fa-spin"></i><?php echo JText::_('COM_CONTENT_NO_ARTICLES'); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 
 	<?php $leadingcount = 0; ?>
 	<?php if (!empty($this->lead_items)) : ?>
-		<div class="items-leading clearfix">
+		<div class="clearfix">
 			<?php foreach ($this->lead_items as &$item) : ?>
-				<div class="leading-<?php echo $leadingcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
+				<div class="<?php echo $item->state == 0 ? ' sr-only' : null; ?>"
 					itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
 					<?php
 					$this->item = & $item;
@@ -76,10 +80,11 @@ JHtml::_('behavior.caption');
 			<?php $rowcount = ((int) $key % (int) $this->columns) + 1; ?>
 			<?php if ($rowcount == 1) : ?>
 				<?php $row = $counter / $this->columns; ?>
-				<div class="items-row cols-<?php echo (int) $this->columns; ?> <?php echo 'row-' . $row; ?> row-fluid clearfix">
+				<!--<div class="row">
+				<div class="container-fluid clearfix"> -->
 			<?php endif; ?>
-			<div class="span<?php echo round((12 / $this->columns)); ?>">
-				<div class="item column-<?php echo $rowcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
+			<div class="col col-<?php echo round((12 / $this->columns)); ?>">
+				<div class="<?php echo $item->state == 0 ? ' sr-only' : null; ?>"
 					itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
 					<?php
 					$this->item = & $item;
@@ -90,28 +95,27 @@ JHtml::_('behavior.caption');
 				<?php $counter++; ?>
 			</div><!-- end span -->
 			<?php if (($rowcount == $this->columns) or ($counter == $introcount)) : ?>
-				</div><!-- end row -->
+				<!--</div>
+				</div> end row -->
 			<?php endif; ?>
 		<?php endforeach; ?>
 	<?php endif; ?>
 
 	<?php if (!empty($this->link_items)) : ?>
-		<div class="items-more">
 			<?php echo $this->loadTemplate('links'); ?>
-		</div>
 	<?php endif; ?>
 
 	<?php if (!empty($this->children[$this->category->id]) && $this->maxLevel != 0) : ?>
-		<div class="cat-children">
+		<div>
 			<?php if ($this->params->get('show_category_heading_title_text', 1) == 1) : ?>
 				<h3> <?php echo JText::_('JGLOBAL_SUBCATEGORIES'); ?> </h3>
 			<?php endif; ?>
 			<?php echo $this->loadTemplate('children'); ?> </div>
 	<?php endif; ?>
 	<?php if (($this->params->def('show_pagination', 1) == 1 || ($this->params->get('show_pagination') == 2)) && ($this->pagination->get('pages.total') > 1)) : ?>
-		<div class="pagination">
+		<div class="bg-info clearfix">
 			<?php if ($this->params->def('show_pagination_results', 1)) : ?>
-				<p class="counter pull-right"> <?php echo $this->pagination->getPagesCounter(); ?> </p>
+				<p class="float-right"> <?php echo $this->pagination->getPagesCounter(); ?> </p>
 			<?php endif; ?>
 			<?php echo $this->pagination->getPagesLinks(); ?> </div>
 	<?php endif; ?>

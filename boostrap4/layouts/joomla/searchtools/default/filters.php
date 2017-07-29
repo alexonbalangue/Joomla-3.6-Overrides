@@ -41,12 +41,12 @@ $filters = $data['view']->filterForm->getGroup('filter');
 			$showOn = '';
 			if ($showOnData = $field->getAttribute('dataShowOn'))
 			{
-				JHtml::_('jquery.framework');
+				//JHtml::_('jquery.framework');
 				JHtml::_('script', 'jui/cms.js', false, true);
 				$showOn = " data-showon='" . $showOnData . "'";
 			}
 			?>
-			<div class="js-stools-field-filter"<?php echo $showOn; ?>>
+			<div<?php echo $showOn; ?>>
 				<?php echo $field->input; ?>
 			</div>
 		<?php endif; ?>

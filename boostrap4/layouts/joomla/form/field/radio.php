@@ -41,7 +41,7 @@ extract($displayData);
  */
 
 // Including fallback code for HTML5 non supported browsers.
-JHtml::_('jquery.framework');
+//JHtml::_('jquery.framework');
 JHtml::_('script', 'system/html5fallback.js', false, true);
 
 /**
@@ -54,7 +54,7 @@ JHtml::_('script', 'system/html5fallback.js', false, true);
 $format = '<input type="radio" id="%1$s" name="%2$s" value="%3$s" %4$s />';
 $alt    = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $name);
 ?>
-<fieldset id="<?php echo $id; ?>" class="<?php echo trim($class . ' radio'); ?>"
+<div id="<?php echo $id; ?>" class="<?php echo trim($class . ' radio'); ?>"
 	<?php echo $disabled ? 'disabled' : ''; ?>
 	<?php echo $required ? 'required aria-required="true"' : ''; ?>
 	<?php echo $autofocus ? 'autofocus' : ''; ?>>
@@ -84,4 +84,4 @@ $alt    = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $name);
 			</label>
 		<?php endforeach; ?>
 	<?php endif; ?>
-</fieldset>
+</div>

@@ -9,4 +9,4 @@
 
 defined('JPATH_BASE') or die;
 ?>
-icon-<?php echo $displayData['icon']; ?>
+fa fa-<?php echo $displayData['icon']; ?>

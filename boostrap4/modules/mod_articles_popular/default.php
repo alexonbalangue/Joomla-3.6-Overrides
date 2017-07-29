@@ -9,10 +9,10 @@
 
 defined('_JEXEC') or die;
 ?>
-<ul class="mostread<?php echo $moduleclass_sfx; ?>">
+<ul class="list-inline<?php echo $moduleclass_sfx; ?>">
 <?php foreach ($list as $item) : ?>
 	<li itemscope itemtype="https://schema.org/Article">
-		<a href="<?php echo $item->link; ?>" itemprop="url">
+		<a href="<?php echo $item->link; ?>" itemprop="url" class="btn btn-default">
 			<span itemprop="name">
 				<?php echo $item->title; ?>
 			</span>

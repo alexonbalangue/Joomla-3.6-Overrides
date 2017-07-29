@@ -9,4 +9,4 @@
 
 defined('JPATH_BASE') or die;
 ?>
-<div class="j-links-groups">
+<div class="btn-group">

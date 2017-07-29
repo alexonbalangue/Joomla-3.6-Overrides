@@ -11,7 +11,8 @@ defined('_JEXEC') or die;
 ?>
 
 <?php if ($this->error) : ?>
-<div class="error">
-			<?php echo $this->escape($this->error); ?>
-</div>
+	<div class="alert alert-danger alert-dismissible" role="alert">
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  <?php echo $this->escape($this->error); ?>
+	</div>
 <?php endif; ?>
