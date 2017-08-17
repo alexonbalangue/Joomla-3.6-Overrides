@@ -32,7 +32,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 
 	<div class="<?php echo $this->params->get('pageclass_sfx'); ?>">
 		<?php if (!empty($this->searchword)):?>
-		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', '<i class="badge badge-pill badge-info badge badge-pill badge-info-info">' . $this->total . '</i>');?></p>
+		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', '<i class="badge badge-pill badge-info">' . $this->total . '</i>');?></p>
 		<?php endif;?>
 	</div>
 

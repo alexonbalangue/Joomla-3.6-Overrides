@@ -11,8 +11,8 @@ defined('_JEXEC') or die;
 ?>
 <ul class="list-inline<?php echo $moduleclass_sfx; ?>">
 <?php foreach ($list as $item) : ?>
-	<li itemscope itemtype="https://schema.org/Article">
-		<a href="<?php echo $item->link; ?>" itemprop="url" class="btn btn-default">
+	<li class="list-inline-item" itemscope itemtype="https://schema.org/Article">
+		<a href="<?php echo $item->link; ?>" itemprop="url" class="btn btn-secondary">
 			<span itemprop="name">
 				<?php echo $item->title; ?>
 			</span>

@@ -16,7 +16,7 @@ $params = $this->params;
 	<?php foreach ($this->items as $i => $item) : ?>
 		<?php $info = $item->params->get('info_block_position', 0); ?>
 		<div class="row<?php echo $i % 2; ?>" itemscope itemtype="https://schema.org/Article">
-			<div class="page-header">
+			<div class="display-2">
 				<h2 itemprop="name">
 					<?php if ($params->get('link_titles')) : ?>
 						<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>" itemprop="url">
@@ -42,7 +42,7 @@ $params = $this->params;
 			|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category')); ?>
 		<?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
 			<div>
-				<dl class="dl-horizontal">
+				<dl class="row">
 				<dt>
 					<?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?>
 				</dt>
@@ -123,7 +123,7 @@ $params = $this->params;
 
 		<?php if ($useDefList && ($info == 1 || $info == 2)) : ?>
 			<div class="article-info muted">
-				<dl class="dl-horizontal">
+				<dl class="row">
 				<dt><?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?></dt>
 
 				<?php if ($info == 1) : ?>
@@ -191,7 +191,7 @@ $params = $this->params;
 	</div>
 	<?php endforeach; ?>
 
-<div class="bg-info clearfix">
+<div class="clearfix">
 	<p class="badge badge-pill badge-info"> <?php echo $this->pagination->getPagesCounter(); ?> </p>
 	<?php echo $this->pagination->getPagesLinks(); ?>
 </div>

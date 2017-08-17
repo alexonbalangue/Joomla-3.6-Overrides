@@ -20,7 +20,7 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 ?>
 <div class="profile-edit<?php echo $this->pageclass_sfx?>">
 	<?php if ($this->params->get('show_page_heading')) : ?>
-		<div class="page-header">
+		<div class="display-1">
 			<h1><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
 		</div>
 	<?php endif; ?>
@@ -61,14 +61,14 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 				<?php if ($field->hidden) : ?>
 					<?php echo $field->input; ?>
 				<?php else : ?>
-					<div class="control-group">
-						<div class="control-label">
+					<div class="form-group">
+						<div class="form-control-label">
 							<?php echo $field->label; ?>
 							<?php if (!$field->required && $field->type != 'Spacer') : ?>
 								<span class="optional"><?php echo JText::_('COM_USERS_OPTIONAL'); ?></span>
 							<?php endif; ?>
 						</div>
-						<div class="controls">
+						<div class="form-control">
 							<?php if ($field->fieldname == 'password1') : ?>
 								<?php // Disables autocomplete ?> <input type="password" style="display:none">
 							<?php endif; ?>
@@ -85,14 +85,14 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 		<fieldset>
 			<legend><?php echo JText::_('COM_USERS_PROFILE_TWO_FACTOR_AUTH'); ?></legend>
 
-			<div class="control-group">
-				<div class="control-label">
+			<div class="form-group">
+				<div class="form-control-label">
 					<label id="jform_twofactor_method-lbl" for="jform_twofactor_method" class="hasTooltip"
 						   title="<?php echo '<strong>' . JText::_('COM_USERS_PROFILE_TWOFACTOR_LABEL') . '</strong><br />' . JText::_('COM_USERS_PROFILE_TWOFACTOR_DESC'); ?>">
 						<?php echo JText::_('COM_USERS_PROFILE_TWOFACTOR_LABEL'); ?>
 					</label>
 				</div>
-				<div class="controls">
+				<div class="form-control">
 					<?php echo JHtml::_('select.genericlist', $this->twofactormethods, 'jform[twofactor][method]', array('onchange' => 'Joomla.twoFactorMethodChange()'), 'value', 'text', $this->otpConfig->method, 'jform_twofactor_method', false); ?>
 				</div>
 			</div>
@@ -119,7 +119,7 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 			</div>
 			<?php else : ?>
 			<?php foreach ($this->otpConfig->otep as $otep) : ?>
-			<span class="span3">
+			<span class="col col-12 col-md-3">
 				<?php echo substr($otep, 0, 4); ?>-<?php echo substr($otep, 4, 4); ?>-<?php echo substr($otep, 8, 4); ?>-<?php echo substr($otep, 12, 4); ?>
 			</span>
 			<?php endforeach; ?>
@@ -128,10 +128,10 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 		</fieldset>
 	<?php endif; ?>
 
-		<div class="control-group">
-			<div class="controls">
+		<div class="form-group">
+			<div class="form-control">
 				<button type="submit" class="btn btn-primary validate"><span><?php echo JText::_('JSUBMIT'); ?></span></button>
-				<a class="btn" href="<?php echo JRoute::_('index.php?option=com_users&view=profile'); ?>" title="<?php echo JText::_('JCANCEL'); ?>"><?php echo JText::_('JCANCEL'); ?></a>
+				<a class="btn btn-danger" href="<?php echo JRoute::_('index.php?option=com_users&view=profile'); ?>" title="<?php echo JText::_('JCANCEL'); ?>"><?php echo JText::_('JCANCEL'); ?></a>
 				<input type="hidden" name="option" value="com_users" />
 				<input type="hidden" name="task" value="profile.save" />
 			</div>

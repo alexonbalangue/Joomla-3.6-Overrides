@@ -19,6 +19,8 @@ jQuery(function($) {
 		btn.on('click', function() {
 			btn.find('span').toggleClass('fa fa-plus');
 			btn.find('span').toggleClass('fa fa-minus');
+			btn.find('i').toggleClass('fa fa-plus');
+			btn.find('i').toggleClass('fa fa-minus');
 		});
 	});
 });");

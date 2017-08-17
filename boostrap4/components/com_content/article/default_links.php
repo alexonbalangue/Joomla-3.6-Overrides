@@ -17,7 +17,7 @@ $params = $this->item->params;
 if ($urls && (!empty($urls->urla) || !empty($urls->urlb) || !empty($urls->urlc))) :
 ?>
 
-	<ul class="nav nav-tabs nav-stacked">
+	<ul class="nav nav-tabs flex-column">
 		<?php
 			$urlarray = array(
 			array($urls->urla, $urls->urlatext, $urls->targeta, 'a'),

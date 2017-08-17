@@ -87,7 +87,7 @@ jimport('joomla.html.html.bootstrap');
 	<?php endif; ?>
 
 	<?php if ($this->contact->con_position && $this->params->get('show_position')) : ?>
-		<dl class="contact-position dl-horizontal">
+		<dl class="contact-position row">
 			<dd itemprop="jobTitle">
 				<?php echo $this->contact->con_position; ?>
 			</dd>
@@ -197,7 +197,7 @@ jimport('joomla.html.html.bootstrap');
 		<?php endif; ?>
 
 		<div class="contact-miscinfo">
-			<dl class="dl-horizontal">
+			<dl class="row">
 				<dt>
 					<span class="<?php echo $this->params->get('marker_class'); ?>">
 					<?php echo $this->params->get('marker_misc'); ?>

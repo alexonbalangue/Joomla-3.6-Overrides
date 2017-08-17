@@ -19,7 +19,7 @@ defined('_JEXEC') or die;
 		<a href="<?php echo JRoute::_(TagsHelperRoute::getTagRoute($item->tag_id . '-' . $item->alias)); ?>">
 			<?php echo htmlspecialchars($item->title, ENT_COMPAT, 'UTF-8'); ?></a>
 		<?php if ($display_count) : ?>
-			<span class=" badge"><?php echo $item->count; ?></span>
+			<span class="badge"><?php echo $item->count; ?></span>
 		<?php endif; ?> - 
 	<?php endforeach; ?>
 <?php endif; ?>

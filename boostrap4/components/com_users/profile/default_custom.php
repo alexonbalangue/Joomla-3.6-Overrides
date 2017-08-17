@@ -31,7 +31,7 @@ if (isset($fieldsets['params']))
 			<?php if (isset($fieldset->label) && strlen($legend = trim(JText::_($fieldset->label)))) : ?>
 				<legend><?php echo $legend; ?></legend>
 			<?php endif; ?>
-			<dl class="dl-horizontal">
+			<dl class="row">
 				<?php foreach ($fields as $field) : ?>
 					<?php if (!$field->hidden && $field->type !== 'Spacer') : ?>
 						<dt><?php echo $field->title; ?></dt>

@@ -23,14 +23,14 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 	<fieldset class="filters btn-toolbar">
 		<?php if ($this->params->get('filter_field')) :?>
 			<div class="btn-group">
-				<label class="filter-search-lbl element-invisible" for="filter-search"><span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span><?php echo JText::_('COM_CONTACT_FILTER_LABEL') . '&#160;'; ?></label>
+				<label class="filter-search-lbl sr-only" for="filter-search"><span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span><?php echo JText::_('COM_CONTACT_FILTER_LABEL') . '&#160;'; ?></label>
 				<input type="text" name="filter-search" id="filter-search" value="<?php echo $this->escape($this->state->get('list.filter')); ?>" class="inputbox" onchange="document.adminForm.submit();" title="<?php echo JText::_('COM_CONTACT_FILTER_SEARCH_DESC'); ?>" placeholder="<?php echo JText::_('COM_CONTACT_FILTER_SEARCH_DESC'); ?>" />
 			</div>
 		<?php endif; ?>
 
 		<?php if ($this->params->get('show_pagination_limit')) : ?>
 			<div class="btn-group float-right">
-				<label for="limit" class="element-invisible">
+				<label for="limit" class="sr-only">
 					<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>
 				</label>
 				<?php echo $this->pagination->getLimitBox(); ?>
@@ -50,7 +50,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 					<?php endif; ?>
 
 					<?php if ($this->params->get('show_image_heading')) : ?>
-						<div class="span2 col-md-2">
+						<div class="col col-12 col-md-2">
 							<?php if ($this->items[$i]->image) : ?>
 								<a href="<?php echo JRoute::_(ContactHelperRoute::getContactRoute($item->slug, $item->catid)); ?>">
 									<?php echo JHtml::_('image', $this->items[$i]->image, JText::_('COM_CONTACT_IMAGE_DETAILS'), array('class' => 'contact-thumbnail img-thumbnail')); ?></a>
@@ -58,7 +58,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 						</div>
 					<?php endif; ?>
 
-					<div class="list-title span7 col-md-7">
+					<div class="list-title col col-12 col-md-7">
 						<a href="<?php echo JRoute::_(ContactHelperRoute::getContactRoute($item->slug, $item->catid)); ?>">
 							<?php echo $item->name; ?></a>
 						<?php if ($this->items[$i]->published == 0) : ?>
@@ -87,7 +87,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 						<?php endif; ?>
 					</div>
 
-					<div class="span3 col-md-3">
+					<div class="col col-12 col-md-3">
 						<?php if ($this->params->get('show_telephone_headings') AND !empty($item->telephone)) : ?>
 							<?php echo JText::sprintf('COM_CONTACT_TELEPHONE_NUMBER', $item->telephone); ?><br />
 						<?php endif; ?>
@@ -108,7 +108,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 		</ul>
 
 		<?php if ($this->params->get('show_pagination', 2)) : ?>
-		<div class="bg-info clearfix">
+		<div class="clearfix">
 			<?php if ($this->params->def('show_pagination_results', 1)) : ?>
 			<p class="counter">
 				<?php echo $this->pagination->getPagesCounter(); ?>

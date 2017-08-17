@@ -40,6 +40,6 @@ defined('_JEXEC') or die;
 <?php endforeach; ?>
 </dl>
 
-<div class="bg-info clearfix">
+<div class="clearfix">
 	<?php echo $this->pagination->getPagesLinks(); ?>
 </div>

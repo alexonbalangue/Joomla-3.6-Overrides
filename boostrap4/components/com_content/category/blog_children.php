@@ -26,7 +26,7 @@ if (count($this->children[$this->category->id]) > 0 && $this->maxLevel != 0) : ?
 		<div<?php echo $class; ?>>
 			<?php $class = ''; ?>
 			<?php if ($lang->isRtl()) : ?>
-			<h3 class="page-header">
+			<h3 class="display-3">
 				<?php if ( $this->params->get('show_cat_num_articles', 1)) : ?>
 					<span class="badge tip hasTooltip" title="<?php echo JHtml::tooltipText('COM_CONTENT_NUM_ITEMS'); ?>">
 						<?php echo $child->getNumItems(true); ?>
@@ -40,7 +40,7 @@ if (count($this->children[$this->category->id]) > 0 && $this->maxLevel != 0) : ?
 				<?php endif;?>
 			</h3>
 			<?php else : ?>
-			<h3 class="page-header"><a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($child->id));?>">
+			<h3 class="display-3"><a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($child->id));?>">
 				<?php echo $this->escape($child->title); ?></a>
 				<?php if ( $this->params->get('show_cat_num_articles', 1)) : ?>
 					<span class="badge hasTooltip" title="<?php echo JHtml::tooltipText('COM_CONTENT_NUM_ITEMS'); ?>">

@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 <?php if (JPluginHelper::isEnabled('user', 'profile')) :
 	$fields = $this->item->profile->getFieldset('profile'); ?>
 	<div id="users-profile-custom">
-		<dl class="dl-horizontal">
+		<dl class="row">
 			<?php foreach ($fields as $profile) :
 				if ($profile->value) :
 					echo '<dt>' . $profile->label . '</dt>';

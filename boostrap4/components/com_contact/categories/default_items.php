@@ -24,7 +24,7 @@ if (count($this->items[$this->parent->id]) > 0 && $this->maxLevelcat != 0) :
 			?>
 			<div <?php echo $class; ?> >
 			<?php $class = ''; ?>
-				<h3 class="page-header item-title">
+				<h3 class="display-3 item-title">
 					<a href="<?php echo JRoute::_(ContactHelperRoute::getCategoryRoute($item->id, $item->language)); ?>">
 					<?php echo $this->escape($item->title); ?></a>
 					<?php if ($this->params->get('show_cat_items_cat') == 1) :?>

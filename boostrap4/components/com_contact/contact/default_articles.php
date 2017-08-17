@@ -13,7 +13,7 @@ require_once JPATH_SITE . '/components/com_content/helpers/route.php';
 
 ?>
 <?php if ($this->params->get('show_articles')) : ?>
-	<ul class="nav nav-tabs nav-stacked">
+	<ul class="nav nav-tabs flex-column">
 		<?php foreach ($this->item->articles as $article) :	?>
 			<li class="nav-item">
 				<?php echo JHtml::_('link', JRoute::_(ContentHelperRoute::getArticleRoute($article->slug, $article->catid, $article->language)), htmlspecialchars($article->title, ENT_COMPAT, 'UTF-8')); ?>

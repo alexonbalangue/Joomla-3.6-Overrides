@@ -24,13 +24,13 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 	<fieldset class="filters btn-toolbar">
 		<?php if (($this->params->get('filter_field') != 'hide') || ($this->params->get('filter_field') != '0')) :?>
 			<div class="btn-group">
-				<label class="filter-search-lbl element-invisible" for="filter-search"><span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span><?php echo JText::_('COM_NEWSFEEDS_FILTER_LABEL') . '&#160;'; ?></label>
+				<label class="filter-search-lbl sr-only" for="filter-search"><span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span><?php echo JText::_('COM_NEWSFEEDS_FILTER_LABEL') . '&#160;'; ?></label>
 				<input type="text" name="filter-search" id="filter-search" value="<?php echo $this->escape($this->state->get('list.filter')); ?>" class="inputbox" onchange="document.adminForm.submit();" title="<?php echo JText::_('COM_NEWSFEEDS_FILTER_SEARCH_DESC'); ?>" placeholder="<?php echo JText::_('COM_NEWSFEEDS_FILTER_SEARCH_DESC'); ?>" />
 			</div>
 		<?php endif; ?>
 		<?php if ($this->params->get('show_pagination_limit')) : ?>
 			<div class="btn-group float-right">
-				<label for="limit" class="element-invisible">
+				<label for="limit" class="sr-only">
 					<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>
 				</label>
 				<?php echo $this->pagination->getLimitBox(); ?>
@@ -46,7 +46,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 					<li class="cat-list-row<?php echo $i % 2; ?>" >
 				<?php endif; ?>
 				<?php  if ($this->params->get('show_articles')) : ?>
-					<span class="list-hits badge badge-pill badge-info badge badge-pill badge-info-info float-right">
+					<span class="list-hits badge badge-pill badge-info float-right">
 						<?php echo JText::sprintf('COM_NEWSFEEDS_NUM_ARTICLES_COUNT', $item->numarticles); ?>
 					</span>
 				<?php  endif; ?>
@@ -74,7 +74,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 		<?php // Add pagination links ?>
 		<?php if (!empty($this->items)) : ?>
 			<?php if (($this->params->def('show_pagination', 2) == 1  || ($this->params->get('show_pagination') == 2)) && ($this->pagination->pagesTotal > 1)) : ?>
-				<div class="bg-info clearfix">
+				<div class="clearfix">
 					<?php if ($this->params->def('show_pagination_results', 1)) : ?>
 						<p class="counter float-right">
 							<?php echo $this->pagination->getPagesCounter(); ?>

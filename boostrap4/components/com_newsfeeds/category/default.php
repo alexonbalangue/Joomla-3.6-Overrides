@@ -40,7 +40,7 @@ $pageClass = $this->params->get('pageclass_sfx');
 			<?php if ($this->params->get('show_description') && $this->category->description) : ?>
 				<?php echo JHtml::_('content.prepare', $this->category->description, '', 'com_newsfeeds.category'); ?>
 			<?php endif; ?>
-			<div class="clr"></div>
+			<div class="clearfix"></div>
 		</div>
 	<?php endif; ?>
 

@@ -19,7 +19,7 @@ JHtml::_('bootstrap.tooltip');
 		</li>
 	<?php else : ?>
 		<li class="breadcrumb-item active">
-			<span class="dropdown-divider fa fa-home fa-2x"></span>
+			<span class="dropdown-divider fa fa-home fa-4x"></span>
 		</li>
 	<?php endif; ?>
 
@@ -64,7 +64,7 @@ JHtml::_('bootstrap.tooltip');
 			</li>
 		<?php elseif ($show_last) :
 			// Render last item if reqd. ?>
-			<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="active">
+			<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item active">
 				<span itemprop="name">
 					<?php echo $item->name; ?>
 				</span>

@@ -15,7 +15,7 @@ JHtml::_('behavior.caption');
 ?>
 <div class="row<?php /*echo $this->pageclass_sfx;*/ ?>" itemscope itemtype="https://schema.org/Blog">
 	<?php if ($this->params->get('show_page_heading')) : ?>
-		<div class="page-header">
+		<div class="display-1">
 			<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
 		</div>
 	<?php endif; ?>
@@ -83,7 +83,7 @@ JHtml::_('behavior.caption');
 				<!--<div class="row">
 				<div class="container-fluid clearfix"> -->
 			<?php endif; ?>
-			<div class="col col-<?php echo round((12 / $this->columns)); ?>">
+			<div class="col col-12 col-md-<?php echo round((12 / $this->columns)); ?>">
 				<div class="<?php echo $item->state == 0 ? ' sr-only' : null; ?>"
 					itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
 					<?php
@@ -113,7 +113,7 @@ JHtml::_('behavior.caption');
 			<?php echo $this->loadTemplate('children'); ?> </div>
 	<?php endif; ?>
 	<?php if (($this->params->def('show_pagination', 1) == 1 || ($this->params->get('show_pagination') == 2)) && ($this->pagination->get('pages.total') > 1)) : ?>
-		<div class="bg-info clearfix">
+		<div class="clearfix">
 			<?php if ($this->params->def('show_pagination_results', 1)) : ?>
 				<p class="float-right"> <?php echo $this->pagination->getPagesCounter(); ?> </p>
 			<?php endif; ?>

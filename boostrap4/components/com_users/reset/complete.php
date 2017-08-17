@@ -14,7 +14,7 @@ JHtml::_('behavior.formvalidator');
 ?>
 <div class="<?php echo $this->pageclass_sfx?>">
 	<?php if ($this->params->get('show_page_heading')) : ?>
-		<div class="page-header">
+		<div class="display-1">
 			<h1>
 				<?php echo $this->escape($this->params->get('page_heading')); ?>
 			</h1>
@@ -25,7 +25,7 @@ JHtml::_('behavior.formvalidator');
 		<?php foreach ($this->form->getFieldsets() as $fieldset) : ?>
 				<p><?php echo JText::_($fieldset->label); ?></p>
 				<?php foreach ($this->form->getFieldset($fieldset->name) as $name => $field) : ?>
-					<div class="form-group">
+					<div class="form-group row">
 						
 							<?php echo $field->label; ?>				
 						
@@ -35,7 +35,7 @@ JHtml::_('behavior.formvalidator');
 				<?php endforeach; ?>
 		<?php endforeach; ?>
 
-		<div class="form-group">
+		<div class="form-group row">
 			
 				<button type="submit" class="btn btn-primary validate"><?php echo JText::_('JSUBMIT'); ?></button>
 			

@@ -24,7 +24,7 @@ if (count($this->items[$this->parent->id]) > 0 && $this->maxLevelcat != 0) :
 			?>
 			<div <?php echo $class; ?> >
 			<?php $class = ''; ?>
-				<h3 class="page-header item-title">
+				<h3 class="display-3 item-title">
 				<a href="<?php echo JRoute::_(NewsfeedsHelperRoute::getCategoryRoute($item->id, $item->language));?>">
 					<?php echo $this->escape($item->title); ?></a>
 					<?php if ($this->params->get('show_cat_items_cat') == 1) :?>
@@ -35,7 +35,7 @@ if (count($this->items[$this->parent->id]) > 0 && $this->maxLevelcat != 0) :
 					<?php endif; ?>
 					<?php if (count($item->getChildren()) > 0 && $this->maxLevelcat > 1) : ?>
 						<a id="category-btn-<?php echo $item->id;?>" href="#category-<?php echo $item->id;?>"
-							data-toggle="collapse" data-toggle="button" class="btn btn-mini pull-right"><span class="icon-plus"></span></a>
+							data-toggle="collapse" data-toggle="button" class="btn btn-sm pull-right"><i class="fa fa-plus"></i></a>
 					<?php endif;?>
 				</h3>
 				<?php if ($this->params->get('show_subcat_desc_cat') == 1) :?>

@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 ?>
-<dl class="<?php echo $moduleclass_sfx ?>">
+<dl class="row<?php echo $moduleclass_sfx ?>">
 <?php foreach ($list as $item) : ?>
 	<dt><?php echo $item->title;?></dt>
 	<dd><?php echo $item->data;?></dd>

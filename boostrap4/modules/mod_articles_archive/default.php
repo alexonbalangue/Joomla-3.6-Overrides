@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 <?php if (!empty($list)) : ?>
 	<ul class="list-inline<?php echo $moduleclass_sfx; ?>">
 	<?php foreach ($list as $item) : ?>
-	<li>
+	<li class="list-inline-item">
 		<a href="<?php echo $item->link; ?>">
 			<?php echo $item->text; ?>
 		</a>

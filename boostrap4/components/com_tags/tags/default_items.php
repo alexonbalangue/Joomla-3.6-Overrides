@@ -91,7 +91,7 @@ JFactory::getDocument()->addScriptDeclaration("
 		
 			<?php endif; ?>
 			<?php if ((!empty($item->access)) && in_array($item->access, $this->user->getAuthorisedViewLevels())) : ?>
-			<div class="col-md-<?php echo $i % 2; ?>" >
+			<div class="col col-12 col-md-<?php echo $i % 2; ?>" >
 			<h3>
 				<a href="<?php echo JRoute::_(TagsHelperRoute::getTagRoute($item->id . '-' . $item->alias)); ?>">
 					<?php echo $this->escape($item->title); ?>
@@ -137,7 +137,7 @@ JFactory::getDocument()->addScriptDeclaration("
 	<?php // Add pagination links ?>
 	<?php if (!empty($this->items)) : ?>
 	<?php if (($this->params->def('show_pagination', 2) == 1  || ($this->params->get('show_pagination') == 2)) && ($this->pagination->pagesTotal > 1)) : ?>
-		<div class="bg-info clearfix">
+		<div class="clearfix">
 			<?php if ($this->params->def('show_pagination_results', 1)) : ?>
 				<p class="float-right">
 					<?php echo $this->pagination->getPagesCounter(); ?>

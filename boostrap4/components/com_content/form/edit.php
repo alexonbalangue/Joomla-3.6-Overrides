@@ -39,7 +39,7 @@ JFactory::getDocument()->addScriptDeclaration("
 ?>
 <div class="<?php echo $this->pageclass_sfx; ?>">
 	<?php if ($params->get('show_page_heading')) : ?>
-	<div class="page-header">
+	<div class="display-1">
 		<h1>
 			<?php echo $this->escape($params->get('page_heading')); ?>
 		</h1>

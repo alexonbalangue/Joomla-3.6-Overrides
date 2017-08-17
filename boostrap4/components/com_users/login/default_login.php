@@ -14,7 +14,7 @@ JHtml::_('behavior.formvalidator');
 ?>
 <div class="<?php echo $this->pageclass_sfx; ?>">
 	<?php if ($this->params->get('show_page_heading')) : ?>
-	<div class="page-header">
+	<div class="display-1">
 		<h1>
 			<?php echo $this->escape($this->params->get('page_heading')); ?>
 		</h1>
@@ -41,7 +41,7 @@ JHtml::_('behavior.formvalidator');
 
 			<?php foreach ($this->form->getFieldset('credentials') as $field) : ?>
 				<?php if (!$field->hidden) : ?>
-					<div class="form-group">
+					<div class="form-group row">
 							<?php echo $field->label; ?>
 							<?php echo $field->input; ?>
 						
@@ -50,7 +50,7 @@ JHtml::_('behavior.formvalidator');
 			<?php endforeach; ?>
 
 			<?php if ($this->tfa): ?>
-				<div class="form-group">
+				<div class="form-group row">
 						<?php echo $this->form->getField('secretkey')->label; ?>
 						<?php echo $this->form->getField('secretkey')->input; ?>
 					
@@ -58,13 +58,13 @@ JHtml::_('behavior.formvalidator');
 			<?php endif; ?>
 
 			<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
-			<div  class="form-group">
+			<div  class="form-group row">
 				<label><?php echo JText::_('COM_USERS_LOGIN_REMEMBER_ME') ?></label>
 				<input id="remember" type="checkbox" name="remember" class="inputbox" value="yes">
 			</div>
 			<?php endif; ?>
 
-			<div class="form-group">
+			<div class="form-group row">
 					<button type="submit" class="btn btn-primary">
 						<?php echo JText::_('JLOGIN'); ?>
 					</button>

@@ -39,6 +39,92 @@ function modChrome_bswell($module, &$params, &$attribs)
 	}
 }
 
+/******************BOOSTRAP 4***********************/
+function modChrome_bs4withtitlehead($module, &$params, &$attribs)
+{
+	$moduleTag     = $params->get('module_tag', 'div');
+	$bootstrapSize = (int) $params->get('bootstrap_size', 0);
+	$moduleClass   = $bootstrapSize != 0 ? 'col col-12 col-md-' . $bootstrapSize : '';
+	$headerTag     = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerClass   = htmlspecialchars($params->get('header_class', 'text-center'));
+
+	if ($module->content)
+	{
+		echo '<' . $moduleTag . ' class="' . $moduleClass . '">';
+
+			if ($module->showtitle)
+			{
+				echo '<' . $headerTag . ' class="' . $headerClass . '">' . $module->title . '</' . $headerTag . '>';
+			}
+
+			echo $module->content;
+		echo '</' . $moduleTag . '>';
+	}
+}
+function modChrome_bs4frontendshowNocolor($module, &$params, &$attribs)
+{
+	$moduleTag     = $params->get('module_tag', 'div');
+	$bootstrapSize = (int) $params->get('bootstrap_size', 0);
+	$moduleClass   = $bootstrapSize != 0 ? 'col col-12 col-md-' . $bootstrapSize . $bootstrapSize . ' col-lg-' . $bootstrapSize : '';
+	$headerTag     = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerClass   = htmlspecialchars($params->get('header_class', 'text-center'));
+
+	if ($module->content)
+	{
+		echo '<' . $moduleTag . ' class="' . $moduleClass . '">';
+
+			if ($module->showtitle)
+			{
+				echo '<' . $headerTag . ' class="' . $headerClass . '" itemprop="alternativeHealine">' . $module->title . '</' . $headerTag . '><hr class="smallers-color" />';
+			}
+
+			echo '<div class="row">'.$module->content.'</div>';
+		echo '</' . $moduleTag . '>';
+	}
+}
+function modChrome_bs4frontendshowYescolor($module, &$params, &$attribs)
+{
+	$moduleTag     = $params->get('module_tag', 'div');
+	$bootstrapSize = (int) $params->get('bootstrap_size', 0);
+	$moduleClass   = $bootstrapSize != 0 ? 'col col-12 col-md-' . $bootstrapSize . $bootstrapSize . ' col-lg-' . $bootstrapSize : '';
+	$headerTag     = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerClass   = htmlspecialchars($params->get('header_class', 'text-center'));
+
+	if ($module->content)
+	{
+		echo '<' . $moduleTag . ' class="' . $moduleClass . '">';
+
+			if ($module->showtitle)
+			{
+				echo '<' . $headerTag . ' class="' . $headerClass . '" itemprop="alternativeHealine">' . $module->title . '</' . $headerTag . '><hr class="smallers" />';
+			}
+
+			echo '<div class="row">'.$module->content.'</div>';
+		echo '</' . $moduleTag . '>';
+	}
+}
+function modChrome_bs4FooterShow($module, &$params, &$attribs)
+{
+	$moduleTag     = $params->get('module_tag', 'div');
+	$bootstrapSize = (int) $params->get('bootstrap_size', 0);
+	$moduleClass   = $bootstrapSize != 0 ? 'col col-12 col-md-' . $bootstrapSize : '';
+	$headerTag     = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerClass   = htmlspecialchars($params->get('header_class', 'text-center'));
+
+	if ($module->content)
+	{
+		echo '<' . $moduleTag . ' class="' . $moduleClass . '">';
+
+			if ($module->showtitle)
+			{
+				echo '<' . $headerTag . ' class="' . $headerClass . '">' . $module->title . '</' . $headerTag . '>';
+			}
+
+			echo $module->content;
+		echo '</' . $moduleTag . '>';
+	}
+}
+
 /******************BOOSTRAP 3***********************/
 function modChrome_bs3withtitlehead($module, &$params, &$attribs)
 {

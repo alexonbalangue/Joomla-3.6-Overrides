@@ -28,8 +28,8 @@ if ($context == 'com_content.categories')
 $rating = (int) $row->rating;
 
 // Look for images in template if available
-$starImageOn  = 'star';
-$starImageOff = 'star-o';
+$starImageOn  = JHtml::_('image', 'assets/images/system/rating_star.png', JText::_('PLG_VOTE_STAR_ACTIVE'), null, true);
+$starImageOff = JHtml::_('image', 'assets/images/system/rating_star_blank.png', JText::_('PLG_VOTE_STAR_INACTIVE'), null, true);
 
 $img = '';
 for ($i = 0; $i < $rating; $i++)
@@ -45,11 +45,10 @@ $docs = JFactory::getDocument();
 $page_title = $docs->getTitle();
 ?>
 <div class="content_rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-	<p class="unseen sr-only">
+	<p class="unseen element-invisible">
 		<?php echo JText::sprintf('PLG_VOTE_USER_RATING', '<span itemprop="ratingValue">' . $rating . '</span>', '<span itemprop="bestRating">5</span>'); ?>
 		<meta itemprop="ratingCount" content="<?php echo (int) $row->rating_count; ?>" />
-		<meta itemprop="worstRating" content="0" />
-		<script type="application/ld+json">{"@context": "http://schema.org/", "@type": "Product", "name": "<?php echo $page_title; ?>", "aggregateRating": {"@type": "AggregateRating", "ratingValue" : "<?php echo $rating; ?>", "ratingCount": "<?php echo (int) $row->rating_count; ?>", "reviewCount": "5"}}</script>
+		<meta itemprop="worstRating" content="0" /><script type="application/ld+json">{"@context": "http://schema.org/", "@type": "Product", "name": "<?php echo $page_title; ?>", "aggregateRating": {"@type": "AggregateRating", "ratingValue" : "<?php echo $rating; ?>", "ratingCount": "<?php echo (int) $row->rating_count; ?>", "reviewCount": "5"}}</script>
 	</p>
-	<i class="<?php echo $img; ?>"></i>
+	<?php echo $img; ?>
 </div>

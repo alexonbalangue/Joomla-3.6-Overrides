@@ -15,7 +15,7 @@ JHtml::_('behavior.caption');
 ?>
 <div class="<?php echo $this->pageclass_sfx;?>">
 <?php if ($this->params->get('show_page_heading')) : ?>
-<div class="page-header">
+<div class="display-1">
 <h1>
 	<?php echo $this->escape($this->params->get('page_heading')); ?>
 </h1>
@@ -25,7 +25,7 @@ JHtml::_('behavior.caption');
 
 		<?php if ($this->params->get('filter_field') != 'hide') : ?>
 		<label class="sr-only" for="filter-search"><?php echo JText::_('COM_CONTENT_TITLE_FILTER_LABEL') . '&#160;'; ?></label>
-		<div class="col-md-2">
+		<div class="col col-12 col-md-2">
 			<input type="text" name="filter-search" id="filter-search" value="<?php echo $this->escape($this->filter); ?>" class="form-control" onchange="document.getElementById('adminForm').submit();" placeholder="<?php echo JText::_('COM_CONTENT_TITLE_FILTER_LABEL'); ?>">
 		</div>
 		<?php endif; ?>

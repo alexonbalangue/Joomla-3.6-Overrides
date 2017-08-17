@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 
 if ($this->params->get('show_advanced', 1) || $this->params->get('show_autosuggest', 1))
 {
-	JHtml::_('jquery.framework');
+	//JHtml::_('jquery.framework');
 
 	$script = "
 jQuery(function() {";

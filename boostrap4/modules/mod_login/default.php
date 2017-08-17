@@ -21,7 +21,7 @@ JHtml::_('bootstrap.tooltip');
 			<p><?php echo $params->get('pretext'); ?></p>
 		</div>
 	<?php endif; ?>
-			<div class="form-group">
+			<div class="form-group row">
 				<?php if (!$params->get('usetext')) : ?>
 					<label for="modlgn-username" class="sr-only"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?></label>
 					<div class="input-group">
@@ -29,13 +29,13 @@ JHtml::_('bootstrap.tooltip');
 					</div>	
 				<?php else: ?>
 					
-    <label for="modlgn-username3" class="col col-2  control-label"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?></label>
+    <label for="modlgn-username3" class="col col-2  form-control-label"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?></label>
     <input id="modlgn-username" type="text" name="username" class="form-control col col-5 form-control-lg" tabindex="0" placeholder="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>">
 
 				<?php endif; ?>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group row">
 				<?php if (!$params->get('usetext')) : ?>
 					<label for="modlgn-password" class="sr-only"><?php echo JText::_('JGLOBAL_PASSWORD') ?></label>
 					<div class="input-group">
@@ -43,15 +43,15 @@ JHtml::_('bootstrap.tooltip');
 					<input id="modlgn-password" autocomplete="off" type="password" name="password" class="form-control col col-5 form-control-lg" tabindex="0" placeholder="<?php echo JText::_('JGLOBAL_PASSWORD') ?>">
 					</div>	
 				<?php else: ?>
-					<label for="modlgn-passwd" class="col col-2  control-label"><?php echo JText::_('JGLOBAL_PASSWORD') ?></label>
-					<div class="col-sm-4 col-md-4 col-lg-4">
+					<label for="modlgn-passwd" class="col col-2  form-control-label"><?php echo JText::_('JGLOBAL_PASSWORD') ?></label>
+					<div class="col col-md-4">
 					  <input type="password" name="password" tabindex="0" class="form-control col col-5 form-control-lg" id="modlgn-passwd" placeholder="<?php echo JText::_('JGLOBAL_PASSWORD') ?>">
 					</div>	
 
 				<?php endif; ?>
 			</div>
 		<?php if (count($twofactormethods) > 1): ?>
-			<div class="form-group">
+			<div class="form-group row">
 				<?php if (!$params->get('usetext')) : ?>
 						<label for="modlgn-secretkey" class="sr-only"><?php echo JText::_('JGLOBAL_SECRETKEY') ?></label>
 					<div class="input-group">
@@ -64,7 +64,7 @@ JHtml::_('bootstrap.tooltip');
 					</div>	
 					</div>	
 				<?php else: ?>
-					<label for="modlgn-secretkey" class="col col-2  control-label"><?php echo JText::_('JGLOBAL_SECRETKEY') ?></label>
+					<label for="modlgn-secretkey" class="col col-2  form-control-label"><?php echo JText::_('JGLOBAL_SECRETKEY') ?></label>
 					<div class="input-group">
 					  <input id="modlgn-secretkey" autocomplete="off" type="text" name="secretkey" class="form-control col col-5 form-control-lg" tabindex="0" placeholder="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />	
 					<span class="btn width-auto hasTooltip col col-2" title="<?php echo JText::_('JGLOBAL_SECRETKEY_HELP'); ?>">
@@ -76,7 +76,7 @@ JHtml::_('bootstrap.tooltip');
 			</div>
 			
 		<?php endif; ?>
-		  <div class="form-group">
+		  <div class="form-group row">
 		<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
 			<div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 			  <div id="modlgn-remember" class="checkbox">
@@ -87,7 +87,7 @@ JHtml::_('bootstrap.tooltip');
 			</div>
 		<?php endif; ?>
 		  </div>
-		<div id="form-login-submit" class="form-group">
+		<div id="form-login-submit" class="form-group row">
 			<div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 				<button type="submit" tabindex="0" name="Submit" class="btn btn-primary"><?php echo JText::_('JLOGIN') ?></button>
 			</div>
